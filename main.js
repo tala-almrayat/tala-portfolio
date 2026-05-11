@@ -14,7 +14,7 @@ const i18n = {
     nav_experience: "Experience",
     nav_contact: "Contact",
     hero_title: "Hi, I’m Tala Almrayat",
-    hero_sub: "Designing interactive worlds & digital experiences — with a focus on game systems, UI/UX, and creative technology.",
+    hero_sub: "Designing interactive worlds & digital experiences — with a focus on game systems, UI/UX, creative technology, and AI-assisted workflows.",
     cv_btn: "Download CV",
     contact_btn: "Contact",
     pill_1: "UI/UX",
@@ -33,7 +33,7 @@ const i18n = {
     skills_h: "Skills",
     exp_h: "Experience",
     partners_h: "Partners",
-    partners_note: "Tip: hover to flip the cards and read what I delivered.",
+    partners_note: "Tip: hover or tap to flip the cards and read what I delivered.",
     certs_h: "Certifications",
     contact_h: "Contact",
     contact_p: "For internships, collaborations, freelance work, or project-based roles.",
@@ -52,7 +52,7 @@ const i18n = {
     nav_experience: "Erfahrung",
     nav_contact: "Kontakt",
     hero_title: "Hi, ich bin Tala Almrayat",
-    hero_sub: "Ich gestalte interaktive Welten & digitale Erlebnisse — mit Fokus auf Game Systems, UI/UX und kreative Technologie.",
+    hero_sub: "Ich gestalte interaktive Welten & digitale Erlebnisse — mit Fokus auf Game Systems, UI/UX, kreative Technologie und KI-gestützte Workflows.",
     cv_btn: "Lebenslauf herunterladen",
     contact_btn: "Kontakt",
     pill_1: "UI/UX",
@@ -71,7 +71,7 @@ const i18n = {
     skills_h: "Skills",
     exp_h: "Erfahrung",
     partners_h: "Partner",
-    partners_note: "Tipp: Hover, um die Karten zu drehen und Details zu sehen.",
+    partners_note: "Tipp: Hover oder Tippen, um die Karten zu drehen und Details zu sehen.",
     certs_h: "Zertifikate",
     contact_h: "Kontakt",
     contact_p: "Für Praktika, Kooperationen, Freelance-Projekte oder projektbasierte Rollen.",
@@ -91,8 +91,8 @@ const educationItems = {
 };
 
 const expertiseItems = {
-  EN: ["Virtual Reality (VR)", "Augmented Reality (AR)", "3D Design", "Game Development", "Website Development", "Programming", "UX/UI Design", "Graphic Design"],
-  DE: ["Virtual Reality (VR)", "Augmented Reality (AR)", "3D Design", "Game Development", "Webentwicklung", "Programmierung", "UX/UI Design", "Graphic Design"],
+  EN: ["Virtual Reality (VR)", "Augmented Reality (AR)", "3D Design", "Game Development", "Website Development", "Programming", "UX/UI Design", "Graphic Design", "AI-assisted Design Workflows"],
+  DE: ["Virtual Reality (VR)", "Augmented Reality (AR)", "3D Design", "Game Development", "Webentwicklung", "Programmierung", "UX/UI Design", "Graphic Design", "KI-gestützte Design-Workflows"],
 };
 
 const languageItems = {
@@ -111,6 +111,7 @@ const skills = [
   "Digital Experience Design",
   "Adaptive Learning",
   "Strong Visual Composition",
+  "AI-enhanced Creative Workflow",
 ];
 
 const tools = [
@@ -131,8 +132,16 @@ const experience = [
     org: "Tomandora",
     periodEN: "August 2022 – 2023",
     periodDE: "August 2022 – 2023",
-    bulletsEN: ["Developed digital brand identities", "Created high-fidelity designs for different platforms"],
-    bulletsDE: ["Entwicklung digitaler Markenidentitäten", "Erstellung von High-Fidelity-Designs für verschiedene Plattformen"],
+    bulletsEN: [
+      "Developed digital brand identities",
+      "Created high-fidelity designs for different platforms",
+      "Supported design work with AI tools for ideation, visual refinement, and workflow efficiency",
+    ],
+    bulletsDE: [
+      "Entwicklung digitaler Markenidentitäten",
+      "Erstellung von High-Fidelity-Designs für verschiedene Plattformen",
+      "Unterstützung von Designprozessen mit KI-Tools für Ideenfindung, visuelle Optimierung und effizientere Workflows",
+    ],
   },
   {
     roleEN: "Graphic Design Intern",
@@ -147,14 +156,14 @@ const experience = [
 
 const certifications = {
   EN: [
-    { title: "Animation / Talal Abu-Ghazaleh (2026)", file: "./assets/certs/animation-certificate.pdf" },
-    { title: "German B1 – GJU DaF", file: "./assets/certs/gju-daf-b1.pdf" },
-    { title: "English B2 – CEFR", file: "./assets/certs/english-b2-cefr.pdf" },
+    { title: "English Certificate", file: "./assets/certs/English.jpg.jpeg" },
+    { title: "German Certificate – GJU DaF", file: "./assets/certs/gjuDaf.pdf" },
+    { title: "Talal Abu-Ghazaleh Animation Certificate", file: "./assets/certs/Talal.Animation.jpg.jpeg" },
   ],
   DE: [
-    { title: "Animation / Talal Abu-Ghazaleh (2026)", file: "./assets/certs/animation-certificate.pdf" },
-    { title: "Deutsch B1 – GJU DaF", file: "./assets/certs/gju-daf-b1.pdf" },
-    { title: "Englisch B2 – CEFR", file: "./assets/certs/english-b2-cefr.pdf" },
+    { title: "Englisch Zertifikat", file: "./assets/certs/English.jpg.jpeg" },
+    { title: "Deutsch Zertifikat – GJU DaF", file: "./assets/certs/gjuDaf.pdf" },
+    { title: "Talal Abu-Ghazaleh Animationszertifikat", file: "./assets/certs/Talal.Animation.jpg.jpeg" },
   ],
 };
 
@@ -167,7 +176,6 @@ const partners = {
     { name: "WomenMark", tag: "Awareness Visuals", desc: "Designed presentation visuals supporting awareness and development-focused initiatives." },
     { name: "Ministry of Local Administration", tag: "Institutional Slides", desc: "Prepared formal Illustrator-based presentation slides for institutional use." },
   ],
-
   DE: [
     { name: "Mercy Corps", tag: "Folien • Illustration", desc: "Gestaltung und Illustration von Präsentationsfolien über Tomandora mit Fokus auf klare Layouts und visuelle Klarheit." },
     { name: "Ministry of Youth", tag: "Illustrator • Layout", desc: "Strukturierte Folienlayouts in Adobe Illustrator für Jugendinitiativen erstellt." },
@@ -427,7 +435,7 @@ function renderCerts() {
     row.className = "cert-row";
     row.innerHTML = `
       <div class="cert-title">${c.title}</div>
-      <a class="btn btn-mini" href="${c.file}" download>Download</a>
+      <a class="btn btn-mini" href="${c.file}" target="_blank" rel="noreferrer">Open</a>
     `;
     wrap.appendChild(row);
   });
@@ -436,9 +444,12 @@ function renderCerts() {
 function renderPartners() {
   const wrap = $("#partnerGrid");
   wrap.innerHTML = "";
+
   partners[state.lang].forEach((p) => {
     const card = document.createElement("div");
     card.className = "flip";
+    card.setAttribute("tabindex", "0");
+
     card.innerHTML = `
       <div class="flip-inner">
         <div class="flip-face flip-front">
@@ -450,6 +461,18 @@ function renderPartners() {
         </div>
       </div>
     `;
+
+    card.addEventListener("click", () => {
+      card.classList.toggle("is-flipped");
+    });
+
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.classList.toggle("is-flipped");
+      }
+    });
+
     wrap.appendChild(card);
   });
 }
@@ -574,14 +597,16 @@ function setLang(nextLang) {
 
   setTimeout(() => {
     state.lang = nextLang;
+
     const cvBtn = document.getElementById("cvDownload");
 
-if (cvBtn) {
-  cvBtn.href =
-    state.lang === "DE"
-      ? "assets/Bewerbungsunterlagen-Tala Almrayat.pdf"
-      : "assets/Merged-Tala Almrayat.pdf";
-}
+    if (cvBtn) {
+      cvBtn.href =
+        state.lang === "DE"
+          ? "assets/Bewerbungsunterlagen-Tala Almrayat.pdf"
+          : "assets/Merged-Tala Almrayat.pdf";
+    }
+
     $(".slider").style.transform = state.lang === "DE" ? "translateX(100%)" : "translateX(0%)";
 
     applyI18n();
