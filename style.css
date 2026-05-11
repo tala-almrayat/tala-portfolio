@@ -704,36 +704,47 @@ body{
 }
 
 .flip{
-  position:relative;
   min-height:130px;
   border-radius:18px;
-  overflow:hidden;
+  cursor:default;
 }
 
 .flip-inner{
   position:relative;
   width:100%;
-  height:130px;
-  transition:transform .5s ease;
-  transform-style:preserve-3d;
-  -webkit-transform-style:preserve-3d;
+  height:100%;
+  min-height:130px;
+  border-radius:18px;
+  transform:none !important;
 }
 
 .flip-face{
-  position:absolute;
-  inset:0;
-  padding:12px;
+  position:relative;
+  min-height:auto;
   border-radius:18px;
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.24);
-
+  padding:12px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
+  transform:none !important;
+  backface-visibility:visible;
+  -webkit-backface-visibility:visible;
+}
 
-  -webkit-backface-visibility:hidden;
-  backface-visibility:hidden;
+.flip-front{
+  min-height:70px;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+  border-bottom:none;
+}
+
+.flip-back{
+  border-top-left-radius:0;
+  border-top-right-radius:0;
+  background:rgba(255,255,255,.08);
 }
 
 .flip-front .p-name{
@@ -745,10 +756,6 @@ body{
   font-size:12px;
 }
 
-.flip-back{
-  transform:rotateY(180deg);
-}
-
 .flip-back .p-desc{
   font-weight:700;
   font-size:12px;
@@ -756,38 +763,16 @@ body{
   line-height:1.45;
 }
 
-/* flip only on devices with hover */
-
-@media (hover:hover){
-
-  .flip:hover .flip-inner{
-    transform:rotateY(180deg);
-  }
-
+.flip:hover .flip-inner,
+.flip:focus-within .flip-inner,
+.flip.is-flipped .flip-inner{
+  transform:none !important;
 }
 
-/* mobile + problematic browsers fallback */
-
-@media (hover:none){
-
-  .flip{
-    min-height:auto;
+@media(max-width:860px){
+  .partner-grid{
+    grid-template-columns:1fr;
   }
-
-  .flip-inner{
-    transform:none !important;
-    height:auto;
-  }
-
-  .flip-face{
-    position:relative;
-    transform:none !important;
-  }
-
-  .flip-back{
-    display:none;
-  }
-
 }
 .contact-row{
   display:flex;
