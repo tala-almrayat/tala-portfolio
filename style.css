@@ -704,41 +704,36 @@ body{
 }
 
 .flip{
-  perspective:900px;
-  cursor:pointer;
+  position:relative;
   min-height:130px;
+  border-radius:18px;
+  overflow:hidden;
 }
 
 .flip-inner{
   position:relative;
   width:100%;
-  min-height:130px;
-  border-radius:18px;
+  height:130px;
+  transition:transform .5s ease;
   transform-style:preserve-3d;
-  transition:transform .52s ease;
   -webkit-transform-style:preserve-3d;
-}
-
-.flip:hover .flip-inner,
-.flip:focus-within .flip-inner,
-.flip.is-flipped .flip-inner{
-  transform:rotateY(180deg);
 }
 
 .flip-face{
   position:absolute;
   inset:0;
-  min-height:130px;
+  padding:12px;
   border-radius:18px;
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.24);
-  padding:12px;
-  -webkit-backface-visibility:hidden;
-  backface-visibility:hidden;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
+
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
 }
 
 .flip-front .p-name{
@@ -761,6 +756,39 @@ body{
   line-height:1.45;
 }
 
+/* flip only on devices with hover */
+
+@media (hover:hover){
+
+  .flip:hover .flip-inner{
+    transform:rotateY(180deg);
+  }
+
+}
+
+/* mobile + problematic browsers fallback */
+
+@media (hover:none){
+
+  .flip{
+    min-height:auto;
+  }
+
+  .flip-inner{
+    transform:none !important;
+    height:auto;
+  }
+
+  .flip-face{
+    position:relative;
+    transform:none !important;
+  }
+
+  .flip-back{
+    display:none;
+  }
+
+}
 .contact-row{
   display:flex;
   justify-content:space-between;
