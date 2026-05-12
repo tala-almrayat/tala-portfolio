@@ -565,8 +565,68 @@ html, body {
 /* Pitch section dividers */
 .pitch-section { display: flex; flex-direction: column; }
 
-/* Transition */
-.fade-in { animation: fadeIn 0.5s ease forwards; }
+/* Win progress bar */
+#win-bar-wrap {
+  position: absolute;
+  top: 50px; left: 50%; transform: translateX(-50%);
+  width: 200px; text-align: center;
+  font-family: 'Orbitron', monospace;
+  font-size: 9px; letter-spacing: 2px;
+  color: var(--orange); direction: ltr;
+}
+#win-bar-track {
+  margin-top: 4px;
+  height: 4px; background: rgba(255,255,255,0.08);
+  border-radius: 2px; overflow: hidden;
+}
+#win-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--red), var(--orange));
+  width: 0%;
+  transition: width 0.3s;
+  box-shadow: 0 0 8px rgba(232,32,42,0.6);
+}
+
+/* Win screen */
+#screen-win {
+  background: radial-gradient(ellipse at 50% 30%, #0a2000 0%, var(--dark) 70%);
+  flex-direction: column;
+}
+.win-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 24px;
+  text-align: center; padding: 40px 20px;
+  max-width: 600px;
+}
+.win-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(36px, 9vw, 80px);
+  font-weight: 900;
+  color: var(--green);
+  text-shadow: 0 0 40px rgba(57,255,20,0.6), 0 0 80px rgba(57,255,20,0.2);
+  animation: win-pulse 1.5s ease-in-out infinite;
+  direction: ltr;
+}
+@keyframes win-pulse {
+  0%,100% { text-shadow: 0 0 30px rgba(57,255,20,0.5), 0 0 60px rgba(57,255,20,0.2); }
+  50%      { text-shadow: 0 0 60px rgba(57,255,20,0.9), 0 0 120px rgba(57,255,20,0.4); }
+}
+.win-mascot { animation: bounce-idle 1s ease-in-out infinite; filter: drop-shadow(0 0 24px rgba(57,255,20,0.5)); }
+.win-score {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(16px, 3.5vw, 28px);
+  color: var(--orange);
+  direction: ltr;
+}
+.win-arabic {
+  font-family: 'Noto Kufi Arabic', serif;
+  font-size: clamp(18px, 3.5vw, 26px);
+  font-weight: 700;
+  color: var(--green);
+  direction: rtl;
+  text-shadow: 0 0 20px rgba(57,255,20,0.4);
+}
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 /* Flash overlay */
@@ -644,6 +704,49 @@ html, body {
       <div id="hud-lives" style="font-size:16px;margin-top:4px;">🍅🍅🍅</div>
     </div>
     <div class="hud-bl">TAMATEM UNIVERSE</div>
+    <div id="win-bar-wrap">
+      REACH 1500 XP TO WIN
+      <div id="win-bar-track"><div id="win-bar-fill"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCREEN WIN ═══ -->
+<div id="screen-win" class="screen">
+  <canvas id="win-confetti-canvas" style="position:absolute;inset:0;pointer-events:none;z-index:0;"></canvas>
+  <div class="win-content fade-in">
+    <div class="win-mascot">
+      <svg width="110" height="130" viewBox="0 0 130 150">
+        <defs><radialGradient id="tgw" cx="40%" cy="35%"><stop offset="0%" stop-color="#FF5555"/><stop offset="100%" stop-color="#C0000A"/></radialGradient></defs>
+        <ellipse cx="52" cy="28" rx="10" ry="5" fill="#2ECC40" transform="rotate(-30,52,28)"/>
+        <ellipse cx="65" cy="22" rx="10" ry="5" fill="#27AE36"/>
+        <ellipse cx="78" cy="28" rx="10" ry="5" fill="#2ECC40" transform="rotate(30,78,28)"/>
+        <rect x="62" y="18" width="6" height="18" rx="3" fill="#27AE36"/>
+        <ellipse cx="65" cy="88" rx="46" ry="48" fill="url(#tgw)"/>
+        <ellipse cx="50" cy="68" rx="10" ry="7" fill="rgba(255,255,255,0.2)" transform="rotate(-20,50,68)"/>
+        <circle cx="52" cy="82" r="7" fill="white"/>
+        <circle cx="78" cy="82" r="7" fill="white"/>
+        <circle cx="54" cy="83" r="4" fill="#1a1a2e"/>
+        <circle cx="80" cy="83" r="4" fill="#1a1a2e"/>
+        <circle cx="55.5" cy="81.5" r="1.5" fill="white"/>
+        <circle cx="81.5" cy="81.5" r="1.5" fill="white"/>
+        <!-- Big smile / wink -->
+        <path d="M48 94 Q65 114 82 94" stroke="#1a1a2e" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="42" cy="93" rx="7" ry="5" fill="rgba(255,100,100,0.5)"/>
+        <ellipse cx="88" cy="93" rx="7" ry="5" fill="rgba(255,100,100,0.5)"/>
+        <!-- Crown -->
+        <polygon points="65,4 56,18 48,10 52,26 78,26 82,10 74,18" fill="#FFD700"/>
+        <circle cx="65" cy="6" r="3" fill="#FF6B00"/>
+        <circle cx="50" cy="12" r="2.5" fill="#FF6B00"/>
+        <circle cx="80" cy="12" r="2.5" fill="#FF6B00"/>
+      </svg>
+    </div>
+    <div class="win-title">YOU WIN! 👑</div>
+    <div class="win-score">FINAL XP: <span id="win-score">0</span></div>
+    <div class="btn-row">
+      <button class="btn-outline" onclick="showScreen('screen-intro')">↺ PLAY AGAIN</button>
+      <button class="btn-glow" onclick="showPitch()">← BACK TO PITCH</button>
+    </div>
   </div>
 </div>
 
@@ -724,22 +827,6 @@ html, body {
             <div class="card-text">Great games make you forget you're playing. My goal is to design moments that feel inevitable — like they could only exist in a Tamatem world.</div>
           </div>
         </div>
-      </div>
-
-      <!-- Final message -->
-      <div class="final-msg">
-        <div class="final-arabic">طماطم بتصنع عوالم — وأنا بدي أساعد في بنائها.</div>
-        <div class="final-english">
-          This mini-game was built from scratch — vanilla HTML, CSS, and JavaScript.<br>
-          No tutorials. No frameworks. Just me, a blank file, and an idea.<br>
-          Imagine what I could build as part of your team.
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="pitch-footer">
-        Built with vanilla HTML/CSS/JS — no frameworks.<br>
-        Because constraints breed creativity. 🍅
       </div>
 
     </div>
@@ -1201,6 +1288,29 @@ function updateParticles() {
   }
 }
 
+let floatTexts = [];
+
+function spawnFloatingText(x, y, text, color) {
+  floatTexts.push({ x, y, text, color, life: 1, vy: -1.8 });
+}
+
+function updateFloatTexts() {
+  for (let i = floatTexts.length - 1; i >= 0; i--) {
+    const f = floatTexts[i];
+    f.y += f.vy; f.life -= 0.022;
+    if (f.life <= 0) { floatTexts.splice(i, 1); continue; }
+    ctx.save();
+    ctx.globalAlpha = f.life;
+    ctx.font = 'bold 18px Orbitron, monospace';
+    ctx.fillStyle = f.color;
+    ctx.textAlign = 'center';
+    ctx.direction = 'ltr';
+    ctx.shadowColor = f.color; ctx.shadowBlur = 10;
+    ctx.fillText(f.text, f.x, f.y);
+    ctx.restore();
+  }
+}
+
 // ── Confetti ──
 let confettiParts = [];
 let confettiActive = false;
@@ -1256,11 +1366,12 @@ function initGame() {
   resizeCanvas();
   score = 0; lives = 3; speed = 4.5; frameCount = 0;
   shakeTimer = 0; shakeAmt = 0;
-  obstacles = []; gems = []; partPool = [];
+  obstacles = []; gems = []; partPool = []; floatTexts = [];
   player = createPlayer();
   highScore = parseInt(localStorage.getItem('tamatem_hs') || '0');
   initBG();
   updateHUD();
+  document.getElementById('win-bar-fill').style.width = '0%';
 }
 
 function updateHUD() {
@@ -1309,6 +1420,12 @@ function gameLoop() {
     if (score > highScore) { highScore = score; localStorage.setItem('tamatem_hs', highScore); }
     speed = Math.min(4.5 + score * 0.003, 15);
 
+    // Win condition
+    if (score >= 1500) { winGame(); return; }
+
+    // Win progress bar
+    document.getElementById('win-bar-fill').style.width = Math.min(score / 15, 100) + '%';
+
     frameCount++;
     if (frameCount % 3 === 0) updateHUD();
   }
@@ -1353,6 +1470,7 @@ function gameLoop() {
   }
 
   updateParticles();
+  updateFloatTexts();
 
   // Player physics
   if (!player.dead) {
@@ -1392,9 +1510,11 @@ function gameLoop() {
 function hitPlayer() {
   if (player.dead) return;
   lives = Math.max(0, lives - 1);
+  score = Math.max(0, score - 150);
   updateHUD();
   shakeTimer = 12; shakeAmt = 7;
   emitParticles(player.x, player.y, '#E8202A', 12);
+  spawnFloatingText(player.x, player.y - 40, '-150 XP', '#FF4444');
   playDeath();
   player.dead = true;
   player.deadTimer = 0;
@@ -1429,9 +1549,54 @@ function endGame() {
   showScreen('screen-gameover');
 }
 
-// ══════════════════════════════════════
-//  PUBLIC ACTIONS
-// ══════════════════════════════════════
+function winGame() {
+  stopBgHum();
+  gameState = 'idle';
+  document.getElementById('win-score').textContent = score;
+  showScreen('screen-win');
+  startWinConfetti();
+  // Play win fanfare
+  [[523,0],[659,0.1],[784,0.2],[1047,0.35]].forEach(([f,t]) => {
+    setTimeout(() => playTone(f, 'sine', 0.3, 0.28), t * 1000);
+  });
+}
+
+function startWinConfetti() {
+  const cc = document.getElementById('win-confetti-canvas');
+  cc.width = window.innerWidth; cc.height = window.innerHeight;
+  const cx = cc.getContext('2d');
+  const parts = [];
+  for (let i = 0; i < 160; i++) {
+    parts.push({
+      x: Math.random() * cc.width,
+      y: -10 - Math.random() * 300,
+      vx: (Math.random()-0.5) * 4,
+      vy: Math.random() * 4 + 2,
+      rot: Math.random() * 360,
+      rotV: (Math.random()-0.5) * 10,
+      w: 9+Math.random()*7, h: 4+Math.random()*5,
+      color: ['#E8202A','#FF6B00','#39FF14','#BF00FF','#FFD700','#00BFFF','#ffffff'][Math.floor(Math.random()*7)]
+    });
+  }
+  function loop() {
+    if (!document.getElementById('screen-win').classList.contains('active')) return;
+    cx.clearRect(0, 0, cc.width, cc.height);
+    let alive = false;
+    for (const p of parts) {
+      p.x += p.vx; p.y += p.vy; p.rot += p.rotV;
+      if (p.y < cc.height + 20) alive = true;
+      else { p.y = -10; p.x = Math.random() * cc.width; } // loop confetti
+      cx.save();
+      cx.translate(p.x, p.y);
+      cx.rotate(p.rot * Math.PI/180);
+      cx.fillStyle = p.color;
+      cx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      cx.restore();
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+}
 function startGame() {
   showScreen('screen-game');
   initGame();
