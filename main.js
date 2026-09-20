@@ -58,7 +58,7 @@ const i18n = {
     featured_badge_label: "Final Grade",
 
     featured_hint:
-      "Inside you’ll find the trailer, gameplay clips, screenshots and a detailed case study. Playable Windows build available to recruiters upon request.",
+      "Inside you’ll find the trailer, gameplay clips, screenshots and a detailed case study.",
 
     projects_kicker: "PROJECTS",
 
@@ -76,7 +76,7 @@ const i18n = {
     edu_h: "Education",
 
     edu_degree:
-      "German Jordanian University (GJU) · Bachelor’s Degree in Game Design & Media Informatics",
+      "Bachelor’s Degree in Game Design & Media Informatics",
 
     exchange_note:
       "Currently an exchange student at Technische Hochschule Brandenburg (THB), Germany.",
@@ -189,7 +189,7 @@ const i18n = {
     featured_badge_label: "Endnote",
 
     featured_hint:
-      "Darin findest du Trailer, Gameplay-Clips, Screenshots und eine ausführliche Case Study. Spielbarer Windows-Build für Recruiter auf Anfrage verfügbar.",
+      "Darin findest du Trailer, Gameplay-Clips, Screenshots und eine ausführliche Case Study.",
 
     projects_kicker: "PROJEKTE",
 
@@ -207,7 +207,7 @@ const i18n = {
     edu_h: "Ausbildung",
 
     edu_degree:
-      "German Jordanian University (GJU) · Bachelorstudium: Game Design & Media Informatics",
+      "Bachelorstudium: Game Design & Media Informatics",
 
     exchange_note:
       "Derzeit Austauschstudentin an der Technischen Hochschule Brandenburg (THB).",
@@ -2324,63 +2324,59 @@ function renderTriverseMedia(
   `;
 
   const tabs =
-  media.querySelectorAll(
-    ".modal-tab"
-  );
+    media.querySelectorAll(
+      ".modal-tab"
+    );
 
-const panes =
-  media.querySelectorAll(
-    ".triverse-pane"
-  );
+  const panes =
+    media.querySelectorAll(
+      ".triverse-pane"
+    );
 
-tabs.forEach((btn) => {
-  btn.addEventListener(
-    "click",
-    () => {
+  tabs.forEach((btn) => {
+    btn.addEventListener(
+      "click",
+      () => {
 
-      media.querySelectorAll("video").forEach((video) => {
-        video.pause();
-      });
+        tabs.forEach((b) => {
+          b.classList.remove(
+            "active"
+          );
 
-      tabs.forEach((b) => {
-        b.classList.remove(
+          b.setAttribute(
+            "aria-selected",
+            "false"
+          );
+        });
+
+        panes.forEach((p) => {
+          p.classList.remove(
+            "active"
+          );
+        });
+
+        btn.classList.add(
           "active"
         );
 
-        b.setAttribute(
+        btn.setAttribute(
           "aria-selected",
-          "false"
-        );
-      });
-
-      panes.forEach((p) => {
-        p.classList.remove(
-          "active"
-        );
-      });
-
-      btn.classList.add(
-        "active"
-      );
-
-      btn.setAttribute(
-        "aria-selected",
-        "true"
-      );
-
-      const target =
-        media.querySelector(
-          `.triverse-pane-${btn.dataset.tab}`
+          "true"
         );
 
-      if (target) {
-        target.classList.add(
-          "active"
-        );
+        const target =
+          media.querySelector(
+            `.triverse-pane-${btn.dataset.tab}`
+          );
+
+        if (target) {
+          target.classList.add(
+            "active"
+          );
+        }
       }
-    }
-  );
-});
+    );
+  });
 
   /* ==========================
      GAMEPLAY CLIPS
