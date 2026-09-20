@@ -34,22 +34,23 @@ body{
   z-index:-3;
   background:
     radial-gradient(
-      circle at 15% 20%,
-      rgba(255,255,255,.98) 0%,
-      rgba(255,255,255,.78) 28%,
-      transparent 52%
+      circle at 20% 15%,
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,.85) 30%,
+      transparent 55%
     ),
     radial-gradient(
-      circle at 82% 18%,
-      rgba(238,224,255,.58) 0%,
-      transparent 43%
+      circle at 80% 20%,
+      rgba(225,205,255,.55) 0%,
+      rgba(235,220,255,.30) 35%,
+      transparent 60%
     ),
     radial-gradient(
-      circle at 72% 82%,
-      rgba(246,224,240,.42) 0%,
-      transparent 48%
+      circle at 55% 85%,
+      rgba(238,225,255,.38) 0%,
+      transparent 55%
     ),
-    #f7f1f8;
+    #f8f5fb;
 }
 
 .bg::after{
@@ -94,7 +95,7 @@ body{
   border:1px solid rgba(255,255,255,.22);
   -webkit-backdrop-filter:blur(12px);
   backdrop-filter:blur(12px);
-  box-shadow:0 18px 40px rgba(0,0,0,.10);
+  box-shadow:0 18px 42px rgba(43,24,64,.16), 0 4px 14px rgba(122,74,167,.10);
 }
 
 .brand{
@@ -227,7 +228,7 @@ body{
   border:1px solid var(--glass-border);
   -webkit-backdrop-filter:blur(10px);
   backdrop-filter:blur(10px);
-  box-shadow:0 22px 55px rgba(0,0,0,.10);
+  box-shadow:0 22px 58px rgba(43,24,64,.17), 0 5px 16px rgba(122,74,167,.11);
 }
 
 .card.subtle{
@@ -310,7 +311,7 @@ body{
   border:1px solid rgba(255,255,255,.24);
   -webkit-backdrop-filter:blur(12px);
   backdrop-filter:blur(12px);
-  box-shadow:0 26px 70px rgba(0,0,0,.12);
+  box-shadow:0 26px 72px rgba(43,24,64,.19), 0 6px 18px rgba(122,74,167,.11);
 }
 
 .hero-grid{
@@ -442,7 +443,7 @@ body{
   border-radius:26px;
   background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(184,108,255,.08));
   border:1px solid rgba(184,108,255,.35);
-  box-shadow:0 26px 60px rgba(122,74,167,.20);
+  box-shadow:0 28px 66px rgba(122,74,167,.27), 0 6px 18px rgba(43,24,64,.12);
 }
 
 .featured-media{
@@ -645,7 +646,7 @@ body{
   border:1px solid rgba(255,255,255,.24);
   -webkit-backdrop-filter:blur(10px);
   backdrop-filter:blur(10px);
-  box-shadow:0 18px 40px rgba(0,0,0,.08);
+  box-shadow:0 20px 46px rgba(43,24,64,.15), 0 5px 15px rgba(122,74,167,.10);
   cursor:pointer;
   transition:.22s;
 }
@@ -765,6 +766,7 @@ body{
   border-radius:18px;
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 14px 34px rgba(43,24,64,.12), 0 3px 10px rgba(122,74,167,.08);
 }
 
 .tool-icon{
@@ -809,6 +811,7 @@ body{
   border-radius:18px;
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 14px 34px rgba(43,24,64,.12), 0 3px 10px rgba(122,74,167,.08);
 }
 
 .t-top{
@@ -893,6 +896,7 @@ body{
   gap:6px;
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
+  box-shadow:0 14px 34px rgba(43,24,64,.12), 0 3px 10px rgba(122,74,167,.08);
 }
 
 .flip-back{
@@ -978,7 +982,7 @@ body{
   width:min(880px,92vw);
   border-radius:22px;
   background:rgba(255,255,255,.94);
-  box-shadow:0 30px 90px rgba(0,0,0,.22);
+  box-shadow:0 32px 96px rgba(43,24,64,.28), 0 8px 24px rgba(122,74,167,.13);
   overflow:hidden;
   max-height:92vh;
   overflow-y:auto;
@@ -1833,3 +1837,29 @@ body{
 .modal-card.theme-gju .project-case-study{
   margin-top: 18px !important;
 }
+
+/* =====================================================
+   EXTRA SOFT SHADOWS — PILLS / CHIPS / CONTACT DETAILS
+   Shadow only: no layout, color, spacing or background changes
+===================================================== */
+
+.chip,
+.pill{
+  box-shadow:
+    0 7px 16px rgba(43,24,64,.12),
+    0 2px 7px rgba(122,74,167,.10);
+}
+
+.contact-label,
+.contact-value{
+  text-shadow:
+    0 2px 7px rgba(43,24,64,.14),
+    0 1px 3px rgba(122,74,167,.10);
+}
+
+.portfolio-code-note{
+  box-shadow:
+    0 10px 24px rgba(43,24,64,.11),
+    0 3px 9px rgba(122,74,167,.09);
+}
+
