@@ -1578,103 +1578,177 @@ function renderProjects() {
 
   if (!wrap) return;
 
-  wrap.innerHTML = "";
+  /*
+    Build every project card only once.
+    Category switching then only shows/hides the existing cards,
+    so cover images stay loaded instead of appearing one-by-one again.
+  */
+  if (!wrap.dataset.projectsBuilt) {
+    projects.forEach((p, index) => {
+      const card =
+        document.createElement(
+          "div"
+        );
 
-  const filtered =
-    projects.filter(
-      (p) =>
-        p.group ===
-        state.activeCategory
-    );
+      card.className =
+        "project-card";
 
-  filtered.forEach((p) => {
-    const card =
-      document.createElement(
-        "div"
+      card.dataset.projectIndex =
+        String(index);
+
+      card.dataset.group =
+        p.group;
+
+      const title =
+        state.lang === "EN"
+          ? p.titleEN
+          : p.titleDE;
+
+      const desc =
+        state.lang === "EN"
+          ? p.descEN
+          : p.descDE;
+
+      let thumb = "";
+
+      if (p.coverClass) {
+        thumb = `
+          <div class="soft-cover ${p.coverClass}">
+            <div class="soft-cover-content">
+
+              <div class="soft-cover-title">
+                ${p.coverTitle}
+              </div>
+
+              <div class="soft-cover-sub">
+                ${p.coverSub}
+              </div>
+
+            </div>
+          </div>
+        `;
+      } else {
+        const altAttr =
+          p.coverAlt
+            ? ` data-alt="${p.coverAlt}"`
+            : "";
+
+        thumb = `
+          <img
+            src="${p.cover}"
+            ${altAttr}
+            alt="${title}"
+            loading="eager"
+            decoding="async"
+            onerror="coverFallback(this)"
+          >
+        `;
+      }
+
+      card.innerHTML = `
+        <div class="project-thumb">
+          ${thumb}
+        </div>
+
+        <div class="project-meta">
+
+          <div class="project-title">
+            ${title}
+          </div>
+
+          <div class="project-sub">
+            ${desc}
+          </div>
+
+          <div class="chips project-tags">
+            ${p.tags
+              .map(
+                (t) =>
+                  `<span class="chip">${t}</span>`
+              )
+              .join("")}
+          </div>
+
+        </div>
+      `;
+
+      card.addEventListener(
+        "click",
+        () =>
+          openProjectModal(p)
       );
 
-    card.className =
-      "project-card";
+      wrap.appendChild(card);
+    });
 
-    const title =
-      state.lang === "EN"
-        ? p.titleEN
-        : p.titleDE;
+    wrap.dataset.projectsBuilt =
+      "true";
+  }
 
-    const desc =
-      state.lang === "EN"
-        ? p.descEN
-        : p.descDE;
+  /*
+    Keep the cards and images alive.
+    Only update their text and visibility.
+  */
+  wrap
+    .querySelectorAll(
+      ".project-card"
+    )
+    .forEach((card) => {
+      const index =
+        Number(
+          card.dataset.projectIndex
+        );
 
-    let thumb = "";
+      const p =
+        projects[index];
 
-    if (p.coverClass) {
-      thumb = `
-        <div class="soft-cover ${p.coverClass}">
-          <div class="soft-cover-content">
+      if (!p) return;
 
-            <div class="soft-cover-title">
-              ${p.coverTitle}
-            </div>
+      const title =
+        state.lang === "EN"
+          ? p.titleEN
+          : p.titleDE;
 
-            <div class="soft-cover-sub">
-              ${p.coverSub}
-            </div>
+      const desc =
+        state.lang === "EN"
+          ? p.descEN
+          : p.descDE;
 
-          </div>
-        </div>
-      `;
-    } else {
-      const altAttr =
-        p.coverAlt
-          ? ` data-alt="${p.coverAlt}"`
-          : "";
+      const titleEl =
+        card.querySelector(
+          ".project-title"
+        );
 
-      thumb = `
-        <img
-          src="${p.cover}"
-          ${altAttr}
-          alt="${title}"
-          onerror="coverFallback(this)"
-        >
-      `;
-    }
+      const descEl =
+        card.querySelector(
+          ".project-sub"
+        );
 
-    card.innerHTML = `
-      <div class="project-thumb">
-        ${thumb}
-      </div>
+      const img =
+        card.querySelector(
+          ".project-thumb img"
+        );
 
-      <div class="project-meta">
+      if (titleEl) {
+        titleEl.textContent =
+          title;
+      }
 
-        <div class="project-title">
-          ${title}
-        </div>
+      if (descEl) {
+        descEl.textContent =
+          desc;
+      }
 
-        <div class="project-sub">
-          ${desc}
-        </div>
+      if (img) {
+        img.alt = title;
+      }
 
-        <div class="chips project-tags">
-          ${p.tags
-            .map(
-              (t) =>
-                `<span class="chip">${t}</span>`
-            )
-            .join("")}
-        </div>
-
-      </div>
-    `;
-
-    card.addEventListener(
-      "click",
-      () =>
-        openProjectModal(p)
-    );
-
-    wrap.appendChild(card);
-  });
+      card.style.display =
+        p.group ===
+        state.activeCategory
+          ? ""
+          : "none";
+    });
 }
 
 /* =====================================================
