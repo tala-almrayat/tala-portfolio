@@ -414,33 +414,204 @@ body{
   font-size:12px;
 }
 
-.filter-row{
+/* ---------- Featured project (Triverse) ---------- */
+
+.featured-wrap{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:22px;
+  align-items:center;
+  padding:20px;
+  border-radius:26px;
+  background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(184,108,255,.08));
+  border:1px solid rgba(184,108,255,.35);
+  box-shadow:0 26px 60px rgba(122,74,167,.20);
+}
+
+.featured-media{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  outline:none;
+}
+
+.featured-media:focus-visible{
+  box-shadow:0 0 0 3px var(--accent2);
+}
+
+.featured-poster{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease;
+}
+
+.featured-media:hover .featured-poster,
+.featured-media:focus-visible .featured-poster{
+  transform:scale(1.04);
+}
+
+.featured-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(43,24,64,0) 45%,rgba(43,24,64,.55) 100%);
+}
+
+.featured-play{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:64px;
+  height:64px;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  color:var(--accent);
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  box-shadow:0 16px 34px rgba(0,0,0,.30);
+  z-index:2;
+}
+
+.featured-info .big{
+  color:var(--accent);
+  margin-bottom:8px;
+}
+
+.featured-badge{
+  display:inline-block;
   margin-top:14px;
+  padding:9px 16px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;
+  font-weight:900;
+  font-size:12px;
+  box-shadow:0 10px 22px rgba(122,74,167,.30);
+}
+
+.featured-hint{
+  margin-top:12px;
+}
+
+.filter-hint{
+  margin-top:12px;
+}
+
+.filter-row{
+  margin-top:10px;
   display:flex;
   gap:10px;
   flex-wrap:wrap;
 }
 
 .filter-btn{
-  padding:10px 14px;
+  position:relative;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 22px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,.26);
-  background:rgba(255,255,255,.13);
+  border:1.5px solid rgba(122,74,167,.30);
+  background:#ffffff;
   font-weight:900;
-  font-size:12px;
-  color:rgba(43,24,64,.86);
+  font-size:14.5px;
+  color:rgba(43,24,64,.88);
   cursor:pointer;
-  transition:.2s;
+  box-shadow:0 10px 22px rgba(122,74,167,.14);
+  transition:.22s;
+}
+
+.filter-btn::after{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-60%;
+  width:38%;
+  height:220%;
+  transform:rotate(20deg);
+  background:rgba(255,255,255,.55);
+  filter:blur(2px);
+  animation:filterShine 3.6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.filter-btn:nth-child(2)::after{
+  animation-delay:.5s;
+}
+
+.filter-btn:nth-child(3)::after{
+  animation-delay:1s;
+}
+
+@keyframes filterShine{
+  0%{
+    left:-60%;
+    opacity:0;
+  }
+
+  12%{
+    opacity:.95;
+  }
+
+  46%{
+    left:130%;
+    opacity:.95;
+  }
+
+  47%{
+    opacity:0;
+  }
+
+  100%{
+    left:130%;
+    opacity:0;
+  }
 }
 
 .filter-btn:hover{
-  transform:translateY(-1px);
+  transform:translateY(-3px);
+  box-shadow:0 16px 32px rgba(122,74,167,.24);
+  border-color:var(--accent2);
 }
 
 .filter-btn.active{
   color:white;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   border-color:transparent;
+  box-shadow:0 14px 30px rgba(122,74,167,.34);
+}
+
+.filter-btn.active::after{
+  background:rgba(255,255,255,.7);
+}
+
+@media(prefers-reduced-motion:reduce){
+  .filter-btn::after{
+    animation:none;
+    display:none;
+  }
+}
+
+.filter-count{
+  display:inline-grid;
+  place-items:center;
+  min-width:22px;
+  height:22px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(122,74,167,.16);
+  font-size:12px;
+  font-weight:900;
+}
+
+.filter-btn.active .filter-count{
+  background:rgba(255,255,255,.30);
 }
 
 .project-grid{
@@ -558,28 +729,8 @@ body{
   background:linear-gradient(135deg,#fff58a,#ffe16d);
 }
 
-.tamatem-thumb{
-  background:
-    radial-gradient(circle at 25% 22%,rgba(201,0,36,.30),transparent 34%),
-    radial-gradient(circle at 78% 24%,rgba(0,154,106,.22),transparent 36%),
-    linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.12));
-  display:grid;
-  place-items:center;
-  position:relative;
-}
-
-.tomato-mark{
-  font-size:72px;
-  filter:drop-shadow(0 12px 18px rgba(0,0,0,.18));
-}
-
-.tamatem-thumb-title{
-  position:absolute;
-  left:18px;
-  bottom:16px;
-  font-weight:900;
-  font-size:18px;
-  color:#2b1840;
+.cover-figma{
+  background:linear-gradient(135deg,#ffe9f4,#cfe6ff);
 }
 
 .grid-tools{
@@ -675,28 +826,13 @@ body{
   gap:6px;
 }
 
-.cert-list{
-  margin-top:10px;
-  display:grid;
-  gap:10px;
+/* First (most recent) experience gets a subtle highlight */
+.timeline .t-item:first-child{
+  background:linear-gradient(160deg,rgba(184,108,255,.16),rgba(255,255,255,.12));
+  border-color:rgba(184,108,255,.38);
 }
 
-.cert-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:12px;
-  border-radius:16px;
-  background:rgba(255,255,255,.12);
-}
-
-.cert-title{
-  font-weight:900;
-  font-size:13px;
-}
-
-/* Partners fixed layout - Firefox safe */
+/* ---------- Partners: real flip cards ---------- */
 
 .partner-grid{
   margin-top:10px;
@@ -706,53 +842,56 @@ body{
 }
 
 .flip{
-  min-height:auto;
+  min-height:112px;
   border-radius:18px;
-  cursor:default;
+  cursor:pointer;
+  perspective:1200px;
 }
 
 .flip-inner{
   position:relative;
   width:100%;
-  transform:none !important;
+  height:100%;
+  min-height:112px;
+  transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.4,.15,.2,1);
+}
+
+.flip:hover .flip-inner,
+.flip:focus-visible .flip-inner,
+.flip.is-flipped .flip-inner{
+  transform:rotateY(180deg);
 }
 
 .flip-face{
-  position:relative !important;
-  inset:auto !important;
-  min-height:auto !important;
+  position:absolute;
+  inset:0;
   border-radius:18px;
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.24);
-  padding:12px;
+  padding:14px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
-  transform:none !important;
-  backface-visibility:visible !important;
-  -webkit-backface-visibility:visible !important;
-}
-
-.flip-front{
-  border-bottom-left-radius:0;
-  border-bottom-right-radius:0;
-  border-bottom:none;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
 }
 
 .flip-back{
-  border-top-left-radius:0;
-  border-top-right-radius:0;
   background:rgba(255,255,255,.08);
+  transform:rotateY(180deg);
 }
 
 .flip-front .p-name{
   font-weight:900;
+  font-size:13px;
 }
 
 .flip-front .p-tag{
   font-weight:800;
   font-size:12px;
+  color:var(--muted);
 }
 
 .flip-back .p-desc{
@@ -760,12 +899,6 @@ body{
   font-size:12px;
   color:var(--muted);
   line-height:1.45;
-}
-
-.flip:hover .flip-inner,
-.flip:focus-within .flip-inner,
-.flip.is-flipped .flip-inner{
-  transform:none !important;
 }
 
 .contact-row{
@@ -830,6 +963,8 @@ body{
   background:rgba(255,255,255,.94);
   box-shadow:0 30px 90px rgba(0,0,0,.22);
   overflow:hidden;
+  max-height:92vh;
+  overflow-y:auto;
 }
 
 .modal-card.theme-gju{
@@ -852,8 +987,8 @@ body{
   background:linear-gradient(135deg,#fff8bd,#ffffff);
 }
 
-.modal-card.theme-tamatem{
-  background:linear-gradient(135deg,#fff4f2,#f4fff8);
+.modal-card.theme-figma{
+  background:linear-gradient(135deg,#ffeef7,#ffffff);
 }
 
 .modal-close{
@@ -872,6 +1007,10 @@ body{
 
 .modal-media{
   height:380px;
+}
+
+.modal-card.has-tabs .modal-media{
+  height:auto;
 }
 
 .modal-video,
@@ -908,11 +1047,120 @@ body{
   flex-wrap:wrap;
 }
 
+/* ---------- Hints that point at the interactive controls ---------- */
+
+.pane-hint{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:10px 0;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(122,74,167,.10);
+  border:1px solid rgba(122,74,167,.22);
+  color:rgba(43,24,64,.80);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.45;
+}
+
+.hint-dot{
+  width:9px;
+  height:9px;
+  flex:0 0 auto;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  animation:hintPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes hintPulse{
+  0%,100%{
+    box-shadow:0 0 0 0 rgba(184,108,255,.55);
+  }
+
+  50%{
+    box-shadow:0 0 0 6px rgba(184,108,255,0);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hint-dot{
+    animation:none;
+  }
+
+  .hero-img{
+    animation:none;
+  }
+}
+
+/* ---------- Generic tabbed project media (e.g. GJU Clean) ---------- */
+
+.tabbed-media{
+  padding:14px 14px 0;
+}
+
+.tab-pane{
+  display:none;
+}
+
+.tab-pane.active{
+  display:block;
+}
+
+.tab-media{
+  height:440px;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.tab-count{
+  display:inline-grid;
+  place-items:center;
+  min-width:18px;
+  height:18px;
+  padding:0 5px;
+  margin-left:4px;
+  border-radius:999px;
+  background:rgba(122,74,167,.18);
+  font-size:10px;
+  font-weight:900;
+}
+
+.modal-tab.active .tab-count{
+  background:rgba(255,255,255,.28);
+}
+
+/* ---------- Context note inside the modal ---------- */
+
+.project-note{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:16px;
+  background:rgba(122,74,167,.09);
+  border:1px solid rgba(122,74,167,.20);
+}
+
+.note-label{
+  display:block;
+  font-size:11px;
+  font-weight:900;
+  color:var(--accent);
+  margin-bottom:4px;
+}
+
+.note-text{
+  font-size:12.5px;
+  font-weight:600;
+  line-height:1.55;
+  color:rgba(43,24,64,.82);
+}
+
 @supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))){
   .topbar,
   .card,
   .hero-card,
-  .project-card{
+  .project-card,
+  .featured-wrap{
     background:rgba(255,255,255,.82);
   }
 }
@@ -924,6 +1172,14 @@ body{
 
   .hero-grid{
     grid-template-columns:1fr;
+  }
+
+  .featured-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .featured-poster{
+    height:220px;
   }
 
   .grid-2{
@@ -953,4 +1209,610 @@ body{
   .brand-role{
     display:none;
   }
+
+  .tab-media{
+    height:280px;
+  }
+}
+
+/* Triverse project — fancy showcase modal */
+
+.modal-card.theme-triverse{
+  background:linear-gradient(135deg,#f6efff,#ffffff);
+  width:min(1000px,95vw);
+}
+
+.modal-card.theme-triverse .modal-media{
+  height:auto;
+}
+
+.triverse-media{
+  padding:14px 14px 0;
+}
+
+.modal-tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+
+.modal-tab{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1.5px solid rgba(122,74,167,.45);
+  background:#ffffff;
+  font-weight:900;
+  font-size:12.5px;
+  color:var(--accent);
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(122,74,167,.14);
+  transition:.2s;
+}
+
+.modal-tab:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(122,74,167,.22);
+  border-color:var(--accent2);
+}
+
+.modal-tab.active{
+  color:white;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-color:transparent;
+  box-shadow:0 10px 24px rgba(122,74,167,.32);
+}
+
+.triverse-pane{
+  display:none;
+}
+
+.triverse-pane.active{
+  display:block;
+}
+
+.triverse-pane-trailer .modal-video{
+  height:460px;
+  border-radius:14px;
+}
+
+.triverse-pane-gameplay .modal-video{
+  height:460px;
+  border-radius:14px;
+}
+
+.clip-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  padding:10px 12px 12px;
+  margin-bottom:14px;
+  border-radius:16px;
+  background:rgba(122,74,167,.07);
+  border:1px solid rgba(122,74,167,.16);
+}
+
+.clip-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 15px;
+  border-radius:999px;
+  border:1.5px solid rgba(122,74,167,.45);
+  background:white;
+  font-weight:900;
+  font-size:12px;
+  color:var(--accent);
+  cursor:pointer;
+  box-shadow:0 6px 14px rgba(122,74,167,.12);
+  transition:.2s;
+}
+
+.clip-icon{
+  font-size:10px;
+}
+
+.clip-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(122,74,167,.20);
+}
+
+.clip-btn.active{
+  color:white;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-color:transparent;
+}
+
+.triverse-gallery{
+  position:relative;
+  height:460px;
+  border-radius:14px;
+  overflow:hidden;
+  background:rgba(0,0,0,.88);
+}
+
+.gallery-main-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.gallery-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:none;
+  background:rgba(255,255,255,.92);
+  color:var(--accent);
+  font-size:22px;
+  font-weight:900;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  box-shadow:0 10px 22px rgba(0,0,0,.28);
+  transition:.2s;
+}
+
+.gallery-arrow:hover{
+  background:white;
+  transform:translateY(-50%) scale(1.06);
+}
+
+.gallery-prev{
+  left:10px;
+}
+
+.gallery-next{
+  right:10px;
+}
+
+.gallery-counter{
+  position:absolute;
+  right:12px;
+  bottom:10px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,.55);
+  color:white;
+  font-weight:800;
+  font-size:11px;
+}
+
+.gallery-thumbs{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:10px 12px;
+  margin-bottom:14px;
+  border-radius:16px;
+  background:rgba(122,74,167,.07);
+  border:1px solid rgba(122,74,167,.16);
+}
+
+.gallery-thumb{
+  width:84px;
+  height:60px;
+  object-fit:cover;
+  border-radius:10px;
+  flex:0 0 auto;
+  cursor:pointer;
+  opacity:.72;
+  border:2px solid rgba(122,74,167,.30);
+  transition:.2s;
+}
+
+.gallery-thumb:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+.gallery-thumb.active{
+  opacity:1;
+  border-color:var(--accent2);
+  box-shadow:0 8px 18px rgba(122,74,167,.28);
+}
+
+@media(max-width:860px){
+  .triverse-pane-trailer .modal-video,
+  .triverse-pane-gameplay .modal-video,
+  .triverse-gallery{
+    height:280px;
+  }
+}
+
+/* Fallback if a cover image file name doesn't match */
+.project-thumb.cover-missing{
+  background:linear-gradient(135deg,rgba(122,74,167,.26),rgba(184,108,255,.16));
+}
+
+/* Internship-seeking banner in the hero */
+.seeking-banner{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:16px;
+  padding:11px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(111,107,215,.14),rgba(207,102,165,.14));
+  border:1.5px solid rgba(122,74,167,.35);
+  color:var(--ink);
+  font-weight:800;
+  font-size:12.5px;
+  line-height:1.5;
+}
+
+@media(max-width:860px){
+  .seeking-banner{
+    font-size:11.5px;
+  }
+}
+
+.seeking-banner-alt{
+  margin-top:8px;
+  background:linear-gradient(135deg,rgba(111,107,215,.08),rgba(207,102,165,.08));
+  border-color:rgba(122,74,167,.22);
+  color:rgba(43,24,64,.82);
+  font-weight:700;
+}
+
+.exchange-note{
+  margin-top:4px;
+  font-weight:800;
+  color:var(--accent);
+}
+
+/* Auto-shine: a self-playing glint that draws the eye without needing hover.
+   Used on the Triverse CTA button so it stands out on its own. */
+.btn-shine{
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-shine::before{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-60%;
+  width:34%;
+  height:220%;
+  transform:rotate(20deg);
+  background:rgba(255,255,255,.65);
+  filter:blur(2px);
+  animation:btnShine 2.8s ease-in-out infinite;
+  animation-delay:.8s;
+  pointer-events:none;
+}
+
+@keyframes btnShine{
+  0%{
+    left:-60%;
+    opacity:0;
+  }
+
+  12%{
+    opacity:1;
+  }
+
+  42%{
+    left:130%;
+    opacity:1;
+  }
+
+  43%{
+    opacity:0;
+  }
+
+  100%{
+    left:130%;
+    opacity:0;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .btn-shine::before{
+    animation:none;
+    display:none;
+  }
+}
+
+/* The play button on the Triverse poster gets the same self-playing glint,
+   plus a slow breathing pulse, so it reads as "click me" at a glance. */
+.featured-play{
+  animation:playPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes playPulse{
+  0%,100%{
+    box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 0 0 rgba(184,108,255,.55);
+  }
+
+  50%{
+    box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 0 14px rgba(184,108,255,0);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .featured-play{
+    animation:none;
+  }
+}
+
+/* ---------- Triverse case study tab ---------- */
+
+.triverse-pane-case{
+  padding-bottom:8px;
+}
+
+.cs-wrap{
+  display:grid;
+  gap:18px;
+}
+
+.cs-meta{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+.cs-meta-item{
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(122,74,167,.07);
+  border:1px solid rgba(122,74,167,.18);
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.cs-meta-label{
+  font-size:10.5px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+.cs-meta-value{
+  font-size:12.5px;
+  font-weight:800;
+  color:rgba(43,24,64,.88);
+  line-height:1.4;
+}
+
+.cs-deliverables{
+  padding:10px 14px;
+  border-radius:12px;
+  background:rgba(255,255,255,.6);
+  border:1px dashed rgba(122,74,167,.30);
+  font-size:12px;
+  font-weight:700;
+  color:rgba(43,24,64,.75);
+}
+
+.cs-overview{
+  font-size:14px;
+  font-weight:600;
+  line-height:1.7;
+  color:rgba(43,24,64,.85);
+}
+
+.cs-section{
+  padding:16px 18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(122,74,167,.16);
+}
+
+.cs-section-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:900;
+  font-size:14px;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.cs-icon{
+  font-size:16px;
+}
+
+.cs-list{
+  list-style:none;
+  display:grid;
+  gap:8px;
+}
+
+.cs-list li{
+  font-size:12.5px;
+  font-weight:600;
+  line-height:1.6;
+  color:rgba(43,24,64,.82);
+  padding-left:16px;
+  position:relative;
+}
+
+.cs-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:8px;
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+}
+
+@media(max-width:860px){
+  .cs-meta{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+/* ---------- Portfolio coding proof ---------- */
+.portfolio-code-note{
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:14px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  background:linear-gradient(135deg,rgba(122,74,167,.10),rgba(184,108,255,.08));
+  border:1px solid rgba(122,74,167,.22);
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.55;
+}
+
+.portfolio-code-icon{
+  flex:0 0 auto;
+  font-weight:900;
+  color:var(--accent);
+  font-size:13px;
+}
+
+/* ---------- Compact case studies for project modals ---------- */
+.project-case-study{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(122,74,167,.18);
+}
+
+.mini-case-head{
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.mini-case-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.mini-case-item{
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.38);
+  border:1px solid rgba(122,74,167,.16);
+}
+
+.mini-case-item:first-child{
+  grid-column:1 / -1;
+}
+
+.mini-case-label{
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  color:rgba(122,74,167,.92);
+  margin-bottom:5px;
+}
+
+.mini-case-text{
+  font-size:12px;
+  font-weight:650;
+  line-height:1.55;
+  color:var(--muted);
+}
+
+.btn-playable{
+  background:linear-gradient(90deg,#5f54d9,#9f5ad7);
+}
+
+@media(max-width:700px){
+  .mini-case-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mini-case-item:first-child{
+    grid-column:auto;
+  }
+}
+/* FIX: tabbed project modal layout */
+.modal-card.has-tabs .modal-media{
+  height:auto;
+  min-height:0;
+  display:block;
+}
+
+.tabbed-media{
+  padding:14px 14px 0;
+  display:block;
+  width:100%;
+}
+
+.tab-pane{
+  display:none;
+  width:100%;
+}
+
+.tab-pane.active{
+  display:block;
+}
+
+.tab-media{
+  width:100%;
+  height:440px;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+}
+
+.tab-media .modal-frame,
+.tab-media .modal-video,
+.tab-media .modal-image{
+  width:100%;
+  height:100%;
+  display:block;
+  position:relative;
+}
+
+.modal-card.has-tabs .modal-body{
+  position:relative;
+  clear:both;
+  display:block;
+  width:100%;
+  padding:16px;
+}
+/* =====================================================
+   FINAL GJU CLEAN — MATCH KIDS GAME SPACING
+===================================================== */
+
+.modal-card.theme-gju .modal-body{
+  padding: 22px 28px 26px !important;
+}
+
+.modal-card.theme-gju .project-note{
+  margin-top: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.modal-card.theme-gju #modalTags{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.modal-card.theme-gju #modalTags .chip{
+  padding: 8px 12px !important;
+  margin: 0 !important;
+}
+
+.modal-card.theme-gju .project-case-study{
+  margin-top: 18px !important;
 }

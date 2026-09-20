@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GJUClean — Screen Designs</title>
+<title>SSD Platform — Screen Designs</title>
 <style>
 /* ─────────────────────────────────────────
    DESIGN TOKENS — exact MyGJU portal colors
@@ -11,18 +11,18 @@
    Font: Arial, system sans-serif (MyGJU match)
 ───────────────────────────────────────── */
 :root {
-  --B:   #1A73B5;   /* primary blue   */
-  --BD:  #0F5A96;   /* dark blue      */
-  --BL:  #EBF5FD;   /* light blue bg  */
-  --BM:  #C5DFF5;   /* blue border    */
-  --O:   #F5A623;   /* orange accent  */
-  --OL:  #FEF4E0;   /* light orange   */
+  --B:   #1A73B5;
+  --BD:  #0F5A96;
+  --BL:  #EBF5FD;
+  --BM:  #C5DFF5;
+  --O:   #F5A623;
+  --OL:  #FEF4E0;
   --W:   #FFFFFF;
-  --F:   #F5F7FA;   /* page bg        */
-  --C:   #E8ECF1;   /* card border    */
-  --T1:  #1C2733;   /* text primary   */
-  --T2:  #4A6275;   /* text secondary */
-  --T3:  #8FA8BC;   /* text tertiary  */
+  --F:   #F5F7FA;
+  --C:   #E8ECF1;
+  --T1:  #1C2733;
+  --T2:  #4A6275;
+  --T3:  #8FA8BC;
   --OK:  #1A9E5C;
   --OKL: #E5F7EF;
   --WN:  #D97706;
@@ -134,14 +134,13 @@ body{
   display:flex;align-items:center;justify-content:center;
   font-size:12px;flex-shrink:0;
 }
-/* MyGJU-style brand in toolbar */
 .tb-brand{display:flex;align-items:center;gap:6px;flex:1}
 .tb-bx{
   width:22px;height:22px;background:#fff;border-radius:5px;
   display:flex;align-items:center;justify-content:center;
-  font-size:7px;font-weight:700;color:var(--B);
+  font-size:6px;font-weight:700;color:var(--B);
 }
-.tb-bn{font-size:12px;font-weight:700;color:#fff}
+.tb-bn{font-size:11px;font-weight:700;color:#fff}
 .tb-bn span{color:var(--O)}
 
 /* ─── BODY SCROLL ─── */
@@ -161,47 +160,37 @@ body{
 .bni-dot{width:4px;height:4px;background:var(--O);border-radius:50%}
 
 /* ─── COMMON ELEMENTS ─── */
-/* badge */
 .badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:7px;font-weight:700}
 .b-ok {background:var(--OKL);color:var(--OK)}
 .b-wn {background:var(--WNL);color:var(--WN)}
 .b-er {background:var(--ERL);color:var(--ER)}
 .b-bl {background:var(--BL);color:var(--B)}
-/* segment */
 .seg{display:flex;gap:3px}
 .sbt{flex:1;padding:4px 2px;border-radius:5px;font-size:7.5px;font-weight:700;text-align:center;border:1.5px solid var(--C);color:var(--T3);background:#fff}
 .sbt.on{background:var(--B);color:#fff;border-color:var(--B)}
-/* field */
 .fld{background:var(--BL);border:1.5px solid var(--BM);border-radius:6px;padding:7px 9px;font-size:8.5px;color:var(--T1);width:100%}
 .flbl{font-size:8px;font-weight:700;color:var(--B);margin-bottom:3px;display:flex;align-items:center;gap:4px}
 .rdot{width:5px;height:5px;background:var(--ER);border-radius:50%;flex-shrink:0}
-/* section header */
 .sh{padding:8px 11px 4px;font-size:8.5px;font-weight:700;color:var(--B);text-transform:uppercase;letter-spacing:.7px}
 .sho{color:var(--O)}
-/* card row */
 .crow{
   background:#fff;
   display:flex;align-items:center;gap:9px;
   padding:9px 11px;border-bottom:1px solid var(--C);
 }
-/* avatar */
 .av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
-/* info row */
 .ir{background:#fff;display:flex;align-items:center;gap:9px;padding:8px 11px;border-bottom:1px solid var(--C)}
 .ir-ico{font-size:14px;flex-shrink:0}
 .ir-lbl{font-size:7px;color:var(--T3)}
 .ir-val{font-size:9px;font-weight:700;color:var(--T1)}
 .ir-arr{margin-left:auto;font-size:9px;color:var(--T3)}
-/* stat box */
 .stat{flex:1;background:#fff;border-radius:var(--R);padding:9px 6px;text-align:center;box-shadow:var(--SH)}
 .stat-n{font-size:18px;font-weight:700;color:var(--B);line-height:1}
 .stat-l{font-size:6.5px;color:var(--T3);margin-top:2px;line-height:1.3}
-/* toggle */
 .tog{width:34px;height:18px;background:var(--B);border-radius:9px;position:relative;flex-shrink:0}
 .tog-t{position:absolute;top:2px;right:2px;width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.2)}
 .tog.off{background:var(--C)}
 .tog.off .tog-t{right:auto;left:2px}
-/* date cell */
 .dc{flex-shrink:0;width:30px;padding:5px 0;border-radius:7px;text-align:center;background:#fff;border:1.5px solid var(--C)}
 .dc.on{background:var(--B);border-color:var(--B)}
 .dc-d{font-size:7px;font-weight:700;color:var(--T3)}
@@ -209,20 +198,15 @@ body{
 .dc-n{font-size:11px;font-weight:700;color:var(--T1);line-height:1.2}
 .dc.on .dc-n{color:#fff}
 .dc-dot{width:4px;height:4px;border-radius:50%;background:var(--O);margin:2px auto 0}
-/* progress */
 .pt{background:rgba(255,255,255,.25);border-radius:3px;height:5px;overflow:hidden}
 .pf{background:var(--O);height:100%;border-radius:3px}
-/* fab */
 .fab{position:absolute;bottom:48px;right:10px;width:36px;height:36px;background:var(--O);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 14px rgba(245,166,35,.5);z-index:5}
-/* greeting strip */
 .greet{background:var(--BL);padding:9px 11px;display:flex;align-items:flex-start;justify-content:space-between}
 .g-sub{font-size:7.5px;color:var(--T3)}
 .g-name{font-size:11px;font-weight:700;color:var(--B)}
 .g-role{display:inline-block;background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:3px}
-/* tag strip */
 .tstrip{background:var(--BL);padding:5px 10px;display:flex;gap:5px;align-items:center;border-bottom:1px solid var(--BM)}
 .ttag{background:var(--B);color:#fff;font-size:7px;font-weight:700;padding:2px 8px;border-radius:10px}
-/* steps */
 .steps{display:flex;align-items:center;justify-content:center;gap:0;padding:10px 12px 6px}
 .sc2{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700}
 .sc2.dn{background:var(--B);color:#fff}
@@ -231,15 +215,12 @@ body{
 .sl{width:22px;height:2px}
 .sl.dn{background:var(--B)}
 .sl.td{background:var(--C)}
-/* stars */
 .stars{font-size:15px;color:var(--O);letter-spacing:1px}
 .stars .e{color:var(--C)}
-/* lang card */
 .lc{background:#fff;margin:6px 8px;border-radius:var(--R);padding:9px 11px;display:flex;align-items:center;gap:7px;box-shadow:var(--SH)}
 .lo{flex:1;padding:5px 0;border-radius:6px;text-align:center;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px}
 .lo.on{background:var(--B);color:#fff}
 .lo.off{background:var(--F);color:var(--T3)}
-/* scan */
 .scan-bg{background:#0a0f1a;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
 .scan-top{position:absolute;top:0;left:0;right:0;background:rgba(0,0,0,.55);padding:9px 11px;display:flex;align-items:center;gap:7px}
 .scan-x{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff}
@@ -258,7 +239,6 @@ body{
 .sr-g{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px}
 .sr-lbl{font-size:7px;color:var(--T3)}
 .sr-val{font-size:9px;font-weight:700;color:var(--T1)}
-/* camera */
 .cam{background:#080808;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative}
 .cam-x{position:absolute;top:10px;left:10px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff}
 .cam-row{width:100%;background:rgba(0,0,0,.65);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
@@ -266,16 +246,20 @@ body{
 .cam-btn{width:50px;height:50px;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center}
 .cam-in{width:38px;height:38px;border-radius:50%;background:#fff}
 .cam-fl{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:15px}
-/* photo strip */
 .pstrip{display:flex;gap:5px;padding:5px 10px 6px;overflow-x:auto}
 .pstrip::-webkit-scrollbar{display:none}
 .pthumb{width:38px;height:38px;border-radius:6px;flex-shrink:0;background:var(--BL);border:1.5px solid var(--BM);display:flex;align-items:center;justify-content:center;font-size:14px}
-/* report table */
 .rth{background:var(--B);display:grid;grid-template-columns:1.7fr 2.2fr 1.5fr}
 .rhd{padding:5px 6px;font-size:7px;font-weight:700;color:#fff}
 .rtr{display:grid;grid-template-columns:1.7fr 2.2fr 1.5fr;background:#fff}
 .rtr:nth-child(even){background:var(--BL)}
 .rd{padding:5px 6px;font-size:7.5px;color:var(--T1)}
+
+/* ─── T10 ACTION BUTTONS ─── */
+.task-actions{display:flex;gap:4px;margin-top:5px}
+.ta-btn{display:flex;align-items:center;gap:3px;padding:3px 7px;border-radius:5px;font-size:7px;font-weight:700;cursor:pointer;flex-shrink:0}
+.ta-rate{background:var(--OL);color:var(--WN);border:1px solid #f0d8a0}
+.ta-pic{background:var(--BL);color:var(--B);border:1px solid var(--BM)}
 
 /* ─── FOOTER ─── */
 .pfoot{
@@ -300,16 +284,16 @@ body{
 <!-- ══════════ PAGE HEADER ══════════ -->
 <div class="ph">
   <div class="ph-row">
-    <div class="ph-icon">🧹</div>
+    <div class="ph-icon">🏢</div>
     <div>
-      <div class="ph-name">GJU<b>Clean</b></div>
+      <div class="ph-name">SSD<b>Platform</b></div>
       <div class="ph-sub">Facility Cleaning Management System · German Jordanian University</div>
     </div>
   </div>
   <div class="ph-tags">
     <div class="tag-b">18 Screens</div>
     <div class="tag-b">4 Roles</div>
-    <div class="tag-b">17 Buildings A–Q</div>
+    <div class="tag-b">14 Buildings</div>
     <div class="tag-b">Cleaning + Documentation</div>
     <div class="tag-b">PHP / MySQL</div>
     <div class="tag-o">3 Weeks · 6 Members</div>
@@ -333,14 +317,12 @@ body{
       <div class="pw-lbl">S0 · Splash</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen" style="background:#fff;align-items:center;justify-content:center;gap:0;padding:26px 20px">
-          <!-- GJU logo circle -->
           <div style="width:72px;height:72px;background:var(--B);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(26,115,181,.3);margin-bottom:10px">
-            <span style="font-size:28px">🧹</span>
+            <span style="font-size:28px">🏢</span>
           </div>
-          <div style="font-size:22px;font-weight:700;color:var(--B)">GJU<span style="color:var(--O)">Clean</span></div>
+          <div style="font-size:20px;font-weight:700;color:var(--B)">SSD<span style="color:var(--O)">Platform</span></div>
           <div style="font-size:9.5px;color:var(--T2);margin-top:3px;text-align:center">Facility Cleaning Management System</div>
           <div style="font-size:8.5px;color:var(--T3);text-align:center;margin-top:2px">German Jordanian University</div>
-          <!-- lang selector -->
           <div style="display:flex;gap:7px;margin-top:24px">
             <div style="padding:6px 18px;border-radius:20px;font-size:9px;font-weight:700;background:var(--B);color:#fff">🇬🇧 English</div>
             <div style="padding:6px 18px;border-radius:20px;font-size:9px;font-weight:700;background:#fff;color:var(--B);border:1.5px solid var(--B)">🇯🇴 عربي</div>
@@ -352,29 +334,30 @@ body{
     </div>
 
     <!-- S1: LOGIN -->
+  <!-- S1: LOGIN -->
     <div class="pw">
       <div class="pw-lbl">S1 · Login</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen" style="background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 18px">
-          <!-- MyGJU branding -->
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
             <div style="width:34px;height:34px;background:var(--B);border-radius:9px;display:flex;align-items:center;justify-content:center">
-              <span style="font-size:16px">🧹</span>
+              <span style="font-size:16px">🏢</span>
             </div>
-            <div style="font-size:18px;font-weight:700"><span style="color:var(--O)">GJU</span><span style="color:var(--B)">Clean</span></div>
+            <div style="font-size:18px;font-weight:700"><span style="color:var(--O)">SSD</span><span style="color:var(--B)">Platform</span></div>
           </div>
           <div style="font-size:8.5px;color:var(--T3);text-align:center;margin-bottom:20px">Cleaning Management Portal<br>Employees &amp; Supervisors only</div>
-          <div style="width:100%;margin-bottom:10px">
-            <div class="flbl">Username:</div>
-            <div class="fld">T.Almrayat <span class="s">sample</span></div>
+          
+          <!-- حقل إدخال الرقم الوطني -->
+          <div style="width:100%;margin-bottom:15px">
+            <div class="flbl">National ID:</div>
+            <div class="fld">0000000000 <span class="s">sample</span></div>
           </div>
-          <div style="width:100%;margin-bottom:13px">
-            <div class="flbl">Password:</div>
-            <div class="fld" style="color:var(--T3)">•••••••••</div>
-          </div>
+          <!-- تم إزالة أي أثر لكلمة المرور -->
+
           <div style="width:100%;background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:10px;border-radius:7px;text-align:center">Login as Employee</div>
-          <div style="font-size:8px;color:var(--O);font-weight:700;text-align:center;margin-top:10px">Please enter your GJU Email credentials to login</div>
-          <!-- lang row -->
+          
+          <div style="font-size:8px;color:var(--O);font-weight:700;text-align:center;margin-top:10px">Please enter your National ID to login</div>
+          
           <div style="margin-top:16px;display:flex;background:var(--F);border-radius:16px;padding:4px;gap:3px">
             <div style="padding:4px 13px;border-radius:12px;background:var(--B);color:#fff;font-size:8.5px;font-weight:700">🇬🇧 EN</div>
             <div style="padding:4px 13px;border-radius:12px;color:var(--T3);font-size:8.5px;font-weight:700">🇯🇴 AR</div>
@@ -382,13 +365,12 @@ body{
         </div>
       </div>
     </div>
-
     <!-- PROFILE -->
     <div class="pw">
       <div class="pw-lbl">SP1 · Profile</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen">
-          <div class="tb"><div class="tb-brand"><div class="tb-bx">GJU</div><div class="tb-bn">GJU<span>Clean</span></div></div><div class="tb-ico">🔔</div></div>
+          <div class="tb"><div class="tb-brand"><div class="tb-bx">SSD</div><div class="tb-bn">SSD<span>Platform</span></div></div><div class="tb-ico">🔔</div></div>
           <div style="background:var(--BL);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:4px">
             <div class="av" style="width:52px;height:52px;background:var(--B);font-size:14px;border:3px solid #fff;box-shadow:0 4px 14px rgba(26,115,181,.3)">MH</div>
             <div style="font-size:12px;font-weight:700;color:var(--B)">Mohammed Al-Hassan <span class="s">s</span></div>
@@ -398,7 +380,7 @@ body{
           <div class="sb">
             <div class="ir"><div class="ir-ico">🪪</div><div><div class="ir-lbl">Employee ID</div><div class="ir-val">EMP-2024-047 <span class="s">s</span></div></div></div>
             <div class="ir"><div class="ir-ico">📧</div><div><div class="ir-lbl">Email</div><div class="ir-val">m.hassan@gju.edu.jo <span class="s">s</span></div></div></div>
-            <div class="ir"><div class="ir-ico">🏛️</div><div><div class="ir-lbl">Building</div><div class="ir-val">Main Bldg (A) <span class="s">s</span></div></div><div class="ir-arr">›</div></div>
+            <div class="ir"><div class="ir-ico">🏛️</div><div><div class="ir-lbl">Building</div><div class="ir-val">Building A <span class="s">s</span></div></div><div class="ir-arr">›</div></div>
             <div class="ir"><div class="ir-ico">⏰</div><div><div class="ir-lbl">Shift</div><div class="ir-val">Morning · 07:00–15:00 <span class="s">s</span></div></div></div>
             <div class="ir"><div class="ir-ico">⚙️</div><div><div class="ir-lbl">Settings</div><div class="ir-val">Language &amp; Notifications</div></div><div class="ir-arr">›</div></div>
             <div style="padding:10px"><div style="background:var(--ERL);color:var(--ER);font-weight:700;font-size:10px;padding:8px;border-radius:7px;text-align:center">Sign Out</div></div>
@@ -426,7 +408,7 @@ body{
             <div class="ir" style="background:#fff"><div class="ir-ico">📅</div><div class="ir-val" style="flex:1">Report Reminders</div><div class="tog"><div class="tog-t"></div></div></div>
             <div class="sh">About</div>
             <div class="ir" style="background:#fff"><div class="ir-ico">👤</div><div><div class="ir-lbl">Supervised by</div><div class="ir-val" style="color:var(--B)">Eng. Bara Al-Qudah</div><div style="font-size:7px;color:var(--O)">bara.alqudah@gju.edu.jo</div></div></div>
-            <div class="ir" style="background:#fff"><div class="ir-ico">ℹ️</div><div class="ir-val" style="flex:1">GJUClean v1.0</div><div style="font-size:8px;color:var(--T3)">2025–26</div></div>
+            <div class="ir" style="background:#fff"><div class="ir-ico">ℹ️</div><div class="ir-val" style="flex:1">SSD Platform v1.0</div><div style="font-size:8px;color:var(--T3)">2025–26</div></div>
           </div>
         </div>
       </div>
@@ -447,49 +429,48 @@ body{
   </div>
   <div class="pr">
 
-    <!-- T1: BUILDING SELECTION -->
+    <!-- T1: BUILDING SELECTION — updated names -->
     <div class="pw">
       <div class="pw-lbl">T1 · Building Selection</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen xl">
           <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Select Building</div><div class="tb-sub">Cleaning Service</div></div></div>
-          <!-- fixed service card -->
           <div style="background:var(--B);margin:8px;border-radius:var(--R);padding:9px 11px;display:flex;align-items:center;gap:8px">
             <span style="font-size:20px">🧹</span>
             <div><div style="font-size:10px;font-weight:700;color:#fff">Cleaning Service</div><div style="font-size:7.5px;color:rgba(255,255,255,.65)">Building facility cleaning</div></div>
             <div style="margin-left:auto;background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 7px;border-radius:8px">Active</div>
           </div>
           <div class="sb">
-            <div class="sh sho">Core Campus</div>
+            <!-- Main Academic Buildings -->
+            <div class="sh sho">Academic Buildings</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 8px 6px">
-              <div style="background:var(--B);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:rgba(255,255,255,.6);font-weight:700">A</div><div style="font-size:8.5px;font-weight:700;color:#fff;margin-top:1px">Main Building</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">B</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Engineering</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">C</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Science Block</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">D</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Architecture</div></div>
+              <div style="background:var(--B);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:rgba(255,255,255,.6);font-weight:700">BLDG</div><div style="font-size:9px;font-weight:700;color:#fff;margin-top:1px">A</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">BLDG</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">B</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">BLDG</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">C</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">D</div></div>
             </div>
-            <div class="sh sho">Administrative</div>
+            <!-- Prefab -->
+            <div class="sh sho">Prefab Buildings</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;padding:0 8px 6px">
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 6px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">E</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 6px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">F</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 6px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">G</div></div>
+            </div>
+            <!-- Facilities -->
+            <div class="sh sho">Campus Facilities</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 8px 6px">
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">E</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Admin Block</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">F</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Student Affairs</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">G</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Finance Building</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">H</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">IT Center</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7px;color:var(--T3)">⚽</div><div style="font-size:8px;font-weight:700;color:var(--T1);margin-top:1px">Sport Hall</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7px;color:var(--T3)">🌱</div><div style="font-size:8px;font-weight:700;color:var(--T1);margin-top:1px">Nursery</div></div>
             </div>
-            <div class="sh sho">Student Services</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 8px 6px">
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">I</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Library</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">J</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Cafeteria</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">K</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Student Center</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">L</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Health Clinic</div></div>
+            <!-- Departments -->
+            <div class="sh sho">Service Departments</div>
+            <div style="display:grid;grid-template-columns:1fr;gap:5px;padding:0 8px 6px">
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">🏗️</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Support Services Dept.</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">📦</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Supply Department</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">🏛️</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Civil Engineering Bldg.</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">🚌</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Transportation Division</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">💧</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Water Tank Building</div></div>
             </div>
-            <div class="sh sho">Residential</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 8px 6px">
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">M</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Male Dorms A</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">N</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Male Dorms B</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">O</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Female Dorms</div></div>
-              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">P</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Sports Hall</div></div>
-            </div>
-            <div class="sh sho">Facilities</div>
-            <div style="padding:0 8px 8px"><div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">Q</div><div style="font-size:8.5px;font-weight:700;color:var(--T1);margin-top:1px">Maintenance Workshop</div></div></div>
             <div style="padding:0 8px 10px"><div style="background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">View Daily Activity →</div></div>
           </div>
         </div>
@@ -501,8 +482,7 @@ body{
       <div class="pw-lbl">T2 · Daily Activity</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen lg">
-          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Daily Activity</div><div class="tb-sub">Main Building (A) · Cleaning</div></div></div>
-          <!-- date strip -->
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Daily Activity</div><div class="tb-sub">Building A · Cleaning</div></div></div>
           <div style="display:flex;gap:4px;padding:7px 9px 5px;overflow-x:auto">
             <div class="dc"><div class="dc-d">Mon</div><div class="dc-n">5</div></div>
             <div class="dc"><div class="dc-d">Tue</div><div class="dc-n">6</div></div>
@@ -511,6 +491,15 @@ body{
             <div class="dc"><div class="dc-d">Fri</div><div class="dc-n">9</div></div>
             <div class="dc"><div class="dc-d">Sat</div><div class="dc-n">10</div></div>
             <div class="dc"><div class="dc-d">Sun</div><div class="dc-n">11</div></div>
+          </div>
+          <!-- NEW: Dropdowns for Filtering -->
+          <div style="display:flex;gap:6px;padding:4px 9px 8px;">
+            <div style="flex:1;background:#fff;border:1px solid var(--C);border-radius:6px;padding:5px 7px;font-size:7.5px;font-weight:700;color:var(--T1);display:flex;justify-content:space-between;align-items:center;">
+              <span>Building A <span class="s">s</span></span><span style="color:var(--T3)">▾</span>
+            </div>
+            <div style="flex:1;background:#fff;border:1px solid var(--C);border-radius:6px;padding:5px 7px;font-size:7.5px;font-weight:700;color:var(--T1);display:flex;justify-content:space-between;align-items:center;">
+              <span>All Floors <span class="s">s</span></span><span style="color:var(--T3)">▾</span>
+            </div>
           </div>
           <div class="sb">
             <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--OK)">
@@ -529,7 +518,6 @@ body{
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Restrooms — All Floors <span class="s">s</span></div><span class="badge b-ok">Done</span></div>
               <div style="font-size:7.5px;color:var(--T3)">Lina M. · 07:00–09:00 <span class="s">s</span></div>
             </div>
-            <!-- issue documented -->
             <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--ER)">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Stairwells — Deep Clean <span class="s">s</span></div><span class="badge b-er">Issue Logged</span></div>
               <div style="font-size:7.5px;color:var(--T3)">Ahmad N. · 09:00 · Equipment malfunction <span class="s">s</span></div>
@@ -547,7 +535,7 @@ body{
       <div class="pw-lbl">T3 · HoD Dashboard</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen">
-          <div class="tb"><div class="tb-brand"><div class="tb-bx">GJU</div><div class="tb-bn">GJU<span>Clean</span></div></div><div class="tb-ico">🔔</div></div>
+          <div class="tb"><div class="tb-brand"><div class="tb-bx">SSD</div><div class="tb-bn">SSD<span>Platform</span></div></div><div class="tb-ico">🔔</div></div>
           <div class="greet">
             <div><div class="g-sub">Good Morning,</div><div class="g-name">Eng. Bara Al-Qudah</div><div class="g-role">Head of Department</div></div>
             <div style="text-align:right"><div style="font-size:8px;color:var(--T3)">Wed, May 7</div><div class="s">sample</div></div>
@@ -565,7 +553,7 @@ body{
               </div>
             </div>
             <div style="display:flex;gap:6px;padding:0 8px 10px">
-              <div class="stat"><div class="stat-n">17</div><div class="stat-l">Buildings</div></div>
+              <div class="stat"><div class="stat-n">14</div><div class="stat-l">Buildings</div></div>
               <div class="stat"><div class="stat-n">24</div><div class="stat-l">On Duty <span class="s">s</span></div></div>
               <div class="stat"><div class="stat-n" style="color:var(--O)">3</div><div class="stat-l">Pending <span class="s">s</span></div></div>
             </div>
@@ -615,11 +603,11 @@ body{
           </div>
           <div style="padding:0 11px 4px;font-size:7.5px;color:var(--T3)">Showing 24 employees <span class="s">s</span></div>
           <div class="sb">
-            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:#2E86C1">MH</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Mohammed Hasan <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Main Building</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
-            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--OK)">SK</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Engineering</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
-            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:#7D3C98">LM</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Lina Mansour <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Library</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
-            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--WN)">KA</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Karim Al-Ayed <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Cafeteria</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
-            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--ER)">AN</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Ahmad Nasser <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Admin Block</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:#2E86C1">MH</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Mohammed Hasan <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Bldg A</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--OK)">SK</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Bldg B</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:#7D3C98">LM</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Lina Mansour <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Civil Eng.</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--WN)">KA</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Karim Al-Ayed <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Sport Hall</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--ER)">AN</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Ahmad Nasser <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Supply Dept.</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
           </div>
         </div>
       </div>
@@ -642,7 +630,7 @@ body{
             <div style="flex:1;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:var(--T3)">Evaluations</div>
           </div>
           <div class="sb">
-            <div class="ir"><div class="ir-ico">🏛️</div><div><div class="ir-lbl">Building</div><div class="ir-val">Engineering (B) <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">🏛️</div><div><div class="ir-lbl">Building</div><div class="ir-val">Building B <span class="s">s</span></div></div></div>
             <div class="ir"><div class="ir-ico">⏰</div><div><div class="ir-lbl">Shift</div><div class="ir-val">Morning · 07:00–15:00 <span class="s">s</span></div></div></div>
             <div class="ir"><div class="ir-ico">📋</div><div><div class="ir-lbl">Tasks This Week</div><div class="ir-val">8 completed, 1 issue <span class="s">s</span></div></div></div>
             <div class="ir"><div class="ir-ico">⭐</div><div><div class="ir-lbl">Last Rating</div><div class="ir-val" style="color:var(--O)">★★★★☆ (4.2) <span class="s">s</span></div></div></div>
@@ -670,39 +658,86 @@ body{
   </div>
   <div class="pr">
 
-    <!-- T10: DISTRIBUTION -->
+    <!-- T10: DISTRIBUTION — with ⭐ Rate + 📷 Photo per task -->
     <div class="pw">
       <div class="pw-lbl">T10 · Service Distribution</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen lg">
-          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Today's Cleaning</div><div class="tb-sub">Wed, May 7 · 17 buildings <span style="color:rgba(255,255,255,.35)">(s)</span></div></div></div>
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Today's Cleaning</div><div class="tb-sub">Wed, May 7 · 14 buildings <span style="color:rgba(255,255,255,.35)">(s)</span></div></div></div>
           <div style="display:flex;gap:6px;padding:7px 8px">
             <div style="flex:1;background:#fff;color:var(--B);font-weight:700;font-size:8px;padding:7px;border-radius:6px;text-align:center;border:1.5px solid var(--B)">📋 View Requests</div>
             <div style="flex:1;background:var(--B);color:#fff;font-weight:700;font-size:8px;padding:7px;border-radius:6px;text-align:center">➕ Assign Task</div>
           </div>
           <div class="sb">
-            <div class="sh sho">Main Building (A)</div>
-            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:9px 10px;border-left:3px solid var(--B);box-shadow:var(--SH)">
-              <div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div>
-              <div style="font-size:7.5px;color:var(--T3);margin-top:2px">08:00–10:00</div>
-              <div style="margin-top:4px"><span class="badge b-bl">Assigned: M.Hasan</span></div>
+
+            <!-- Building A -->
+            <div class="sh sho">Building A</div>
+            <!-- Task 1: Floor 1 Lobby - Assigned -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--B);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div>
+                <span class="badge b-bl">Assigned: M.Hasan</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">08:00–10:00</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
             </div>
-            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:9px 10px;border-left:3px solid var(--WN);box-shadow:var(--SH)">
-              <div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div>
-              <div style="font-size:7.5px;color:var(--T3);margin-top:2px">10:00–12:00</div>
-              <div style="margin-top:4px"><span class="badge b-wn">⚠ Unassigned</span></div>
+            <!-- Task 2: Floor 2 Offices - Unassigned -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--WN);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div>
+                <span class="badge b-wn">⚠ Unassigned</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">10:00–12:00</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate" style="opacity:.4;pointer-events:none">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
             </div>
-            <div class="sh sho">Engineering (B)</div>
-            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:9px 10px;border-left:3px solid var(--OK);box-shadow:var(--SH)">
-              <div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 3 — Labs <span class="s">s</span></div>
-              <div style="font-size:7.5px;color:var(--T3);margin-top:2px">09:00–11:00</div>
-              <div style="margin-top:4px"><span class="badge b-ok">In Progress</span></div>
+
+            <!-- Building B -->
+            <div class="sh sho">Building B</div>
+            <!-- Task 3: Floor 3 Labs - In Progress -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--OK);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Floor 3 — Labs <span class="s">s</span></div>
+                <span class="badge b-ok">In Progress</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">09:00–11:00 · Sara Khalil</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
             </div>
-            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:9px 10px;border-left:3px solid var(--WN);box-shadow:var(--SH)">
-              <div style="font-size:9.5px;font-weight:700;color:var(--T1)">Restrooms <span class="s">s</span></div>
-              <div style="font-size:7.5px;color:var(--T3);margin-top:2px">13:00–14:00</div>
-              <div style="margin-top:4px"><span class="badge b-wn">⚠ Unassigned</span></div>
+            <!-- Task 4: Restrooms - Unassigned -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--WN);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Restrooms <span class="s">s</span></div>
+                <span class="badge b-wn">⚠ Unassigned</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">13:00–14:00</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate" style="opacity:.4;pointer-events:none">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
             </div>
+
+            <!-- Sport Hall -->
+            <div class="sh sho">Sport Hall</div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--OK);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Main Hall <span class="s">s</span></div>
+                <span class="badge b-ok">Done</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">07:00–09:00 · Karim A.</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -714,10 +749,9 @@ body{
       <div class="phone"><div class="pn"></div>
         <div class="screen">
           <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Task Detail</div></div></div>
-          <!-- task card -->
           <div style="background:var(--B);margin:8px;border-radius:var(--R);padding:10px 11px">
             <div style="font-size:12px;font-weight:700;color:#fff">Floor 2 — Office Cleaning <span class="s">s</span></div>
-            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-top:3px">Main Building (A) · Floor 2</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-top:3px">Building A · Floor 2</div>
             <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
               <div style="font-size:8px;color:rgba(255,255,255,.8)">🕐 10:00–12:00</div>
               <span style="background:var(--WNL);color:var(--WN);font-size:7px;font-weight:700;padding:2px 7px;border-radius:8px">⚠ Unassigned</span>
@@ -728,7 +762,7 @@ body{
             <div style="display:flex;align-items:center;gap:8px"><div class="av" style="width:28px;height:28px;font-size:9px;background:var(--T3)">?</div><div style="font-size:8.5px;color:var(--T3);font-style:italic">No worker assigned yet</div></div>
           </div>
           <div style="display:flex;gap:7px;padding:7px 8px">
-            <div style="flex:1;background:var(--B);color:#fff;font-weight:700;font-size:9px;padding:10px;border-radius:7px;text-align:center">📷 Scan</div>
+            <div style="flex:1;background:var(--B);color:#fff;font-weight:700;font-size:9px;padding:10px;border-radius:7px;text-align:center">📷 Take Picture</div>
             <div style="flex:1;background:var(--O);color:#fff;font-weight:700;font-size:9px;padding:10px;border-radius:7px;text-align:center">⭐ Rate</div>
           </div>
           <div style="background:#fff;margin:0 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
@@ -759,7 +793,7 @@ body{
               <div class="sr-ok">✅ Badge Scanned — Auto-filled</div>
               <div class="sr-g">
                 <div><div class="sr-lbl">Employee</div><div class="sr-val">Sara Khalil <span class="s">s</span></div></div>
-                <div><div class="sr-lbl">Building</div><div class="sr-val">Engineering (B) <span class="s">s</span></div></div>
+                <div><div class="sr-lbl">Building</div><div class="sr-val">Building B <span class="s">s</span></div></div>
                 <div><div class="sr-lbl">Floor</div><div class="sr-val">Floor 3 <span class="s">s</span></div></div>
                 <div><div class="sr-lbl">Task</div><div class="sr-val">Floor Cleaning <span class="s">s</span></div></div>
               </div>
@@ -778,7 +812,7 @@ body{
           <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Rate Employee</div></div></div>
           <div style="background:var(--BL);padding:9px 11px;display:flex;align-items:center;gap:8px">
             <div class="av" style="width:32px;height:32px;font-size:10px;background:var(--OK)">SK</div>
-            <div><div style="font-size:10px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:8px;color:var(--T3)">Cleaning · Engineering</div></div>
+            <div><div style="font-size:10px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:8px;color:var(--T3)">Cleaning · Building B</div></div>
           </div>
           <div class="sb">
             <div style="padding:8px 11px;border-bottom:1px solid var(--C)">
@@ -817,12 +851,19 @@ body{
             <div style="background:#fff;margin:8px;border-radius:var(--R);padding:10px 11px;box-shadow:var(--SH2)">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--C)">
                 <div class="av" style="width:30px;height:30px;font-size:9px;background:var(--OK)">SK</div>
-                <div><div style="font-size:10px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Engineering</div></div>
+                <div><div style="font-size:10px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Building B</div></div>
               </div>
               <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Overall Score</div><div class="stars" style="font-size:12px">★★★★<span class="e">★</span></div></div>
               <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Punctuality</div><span class="badge b-ok">On Time</span></div>
               <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Appearance</div><span class="badge b-bl">Excellent</span></div>
               <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Cleaning Quality</div><span class="badge b-ok">Excellent</span></div>
+              
+              <!-- NEW: ADD A PICTURE under Cleaning Quality -->
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-top:2px;">
+                <div style="width:36px;height:36px;background:var(--BL);border:1.5px dashed var(--B);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;">🖼️</div>
+                <div style="font-size:7.5px;font-weight:700;color:var(--B);background:var(--BL);border:1px solid var(--BM);padding:5px 8px;border-radius:6px;">+ ADD A PICTURE</div>
+              </div>
+              
               <div style="font-size:7.5px;color:var(--T3);font-style:italic;padding-top:6px;border-top:1px solid var(--C)">"Good performance overall..." <span class="s">s</span></div>
               <div style="font-size:7px;color:var(--T3);margin-top:3px">Reviewed on: May 7, 2026 <span class="s">s</span></div>
             </div>
@@ -863,7 +904,7 @@ body{
             <div style="padding:4px 9px"><div class="flbl">Employee ID <span style="color:var(--ER)">*</span></div><div class="fld">EMP-2026-001 <span class="s">s</span></div></div>
             <div style="padding:4px 9px"><div class="flbl">Role <span style="color:var(--ER)">*</span></div><div class="fld" style="display:flex;justify-content:space-between"><span style="color:var(--B)">Cleaning Worker</span><span style="color:var(--T3)">▾</span></div></div>
             <div style="padding:4px 9px"><div class="flbl">Email <span style="color:var(--ER)">*</span></div><div class="fld">j.smith@gju.edu.jo <span class="s">s</span></div></div>
-            <div style="padding:4px 9px"><div class="flbl">Building Assignment <span style="color:var(--ER)">*</span></div><div class="fld" style="display:flex;justify-content:space-between"><span style="color:var(--B)">Main Building (A)</span><span style="color:var(--T3)">▾</span></div></div>
+            <div style="padding:4px 9px"><div class="flbl">Building Assignment <span style="color:var(--ER)">*</span></div><div class="fld" style="display:flex;justify-content:space-between"><span style="color:var(--B)">Building A</span><span style="color:var(--T3)">▾</span></div></div>
             <div style="padding:4px 9px"><div class="flbl">Shift <span style="color:var(--ER)">*</span></div><div class="seg" style="margin-top:2px"><div class="sbt on" style="font-size:8px">Morning</div><div class="sbt" style="font-size:8px">Afternoon</div><div class="sbt" style="font-size:8px">Night</div></div></div>
             <div style="padding:8px 9px"><div style="background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">Save Employee</div></div>
           </div>
@@ -879,7 +920,6 @@ body{
           <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Daily Follow-Up</div><div class="tb-sub">Wednesday, May 7 <span style="color:rgba(255,255,255,.35)">(s)</span></div></div></div>
           <div class="sb">
             <div style="padding:6px 8px 2px;font-size:8px;font-weight:700;color:var(--B);text-transform:uppercase;letter-spacing:.7px">Required Fields</div>
-            <!-- 4 required fields with red dots -->
             <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Daily Summary</div><div class="rdot"></div></div>
               <div style="font-size:7.5px;color:var(--T3);font-style:italic">Write daily summary here... <span class="s">s</span></div>
@@ -896,7 +936,6 @@ body{
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Action Required</div><div class="rdot"></div></div>
               <div style="font-size:7.5px;color:var(--T3);font-style:italic">Follow-up actions needed... <span class="s">s</span></div>
             </div>
-            <!-- photo strip -->
             <div class="pstrip"><div class="pthumb">📷</div><div style="width:38px;height:38px;border-radius:6px;background:var(--OKL);border:1.5px solid var(--OK);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">🖼️</div></div>
             <div style="display:flex;gap:6px;padding:4px 8px 10px">
               <div style="flex:1;background:var(--F);color:var(--T2);font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center;border:1.5px solid var(--C)">Save Draft</div>
@@ -954,7 +993,6 @@ body{
               <div class="cam-btn"><div class="cam-in"></div></div>
               <div class="cam-fl">🔄</div>
             </div>
-            <!-- review sheet -->
             <div style="position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:12px 12px 0 0;padding:10px 11px">
               <div style="font-size:8px;font-weight:700;color:var(--OK);margin-bottom:6px">Photo captured — review:</div>
               <div style="background:var(--F);border-radius:7px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:8px"><span style="font-size:20px">🖼️</span><span style="font-size:8px;color:var(--T3);margin-left:6px">Preview <span class="s">s</span></span></div>
@@ -978,7 +1016,7 @@ body{
 <div class="track">
   <div class="track-hd">
     <div class="trk-num">Track 05</div>
-    <div class="trk-ttl">Worker Module — Cleaning & Documentation</div>
+    <div class="trk-ttl">Worker Module — Cleaning &amp; Documentation</div>
     <div class="trk-meta">Member 6</div>
   </div>
   <div class="pr">
@@ -988,7 +1026,7 @@ body{
       <div class="pw-lbl">SW1 · Worker Home</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen">
-          <div class="tb"><div class="tb-c"><div class="tb-ttl">My Tasks Today</div><div class="tb-sub">Wed, May 7 · Main Building <span style="color:rgba(255,255,255,.35)">(s)</span></div></div><div class="tb-ico">👤</div></div>
+          <div class="tb"><div class="tb-c"><div class="tb-ttl">My Tasks Today</div><div class="tb-sub">Wed, May 7 · Building A <span style="color:rgba(255,255,255,.35)">(s)</span></div></div><div class="tb-ico">👤</div></div>
           <div style="background:var(--B);padding:8px 11px">
             <div style="font-size:8.5px;color:rgba(255,255,255,.75);margin-bottom:5px">Completed: 2 of 5 tasks <span style="color:rgba(255,255,255,.3);font-size:7px">(s)</span></div>
             <div class="pt"><div class="pf" style="width:40%"></div></div>
@@ -996,12 +1034,12 @@ body{
           <div class="sb">
             <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH)">
               <div style="background:var(--BL);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:var(--B);line-height:1">08:00</div><div style="font-size:6px;color:var(--T3)">AM</div></div>
-              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Main Building</div></div>
+              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Building A</div></div>
               <span class="badge b-ok">✓ Done</span>
             </div>
             <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH);border:1.5px solid var(--B)">
               <div style="background:var(--B);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:#fff;line-height:1">10:00</div><div style="font-size:6px;color:rgba(255,255,255,.6)">AM</div></div>
-              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Main Building</div></div>
+              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Building A</div></div>
               <span class="badge b-bl">Active</span>
             </div>
             <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH)">
@@ -1009,7 +1047,6 @@ body{
               <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Restrooms <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">All Floors</div></div>
               <span class="badge b-wn">Pending</span>
             </div>
-            <!-- issue task -->
             <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH);border:1.5px solid var(--ER)">
               <div style="background:var(--ERL);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:var(--ER);line-height:1">09:00</div><div style="font-size:6px;color:var(--ER)">AM</div></div>
               <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Stairwells <span class="s">s</span></div><div style="font-size:7.5px;color:var(--ER)">⚠ Issue logged</div></div>
@@ -1031,20 +1068,17 @@ body{
       <div class="pw-lbl">SW2 · Task Checklist</div>
       <div class="phone"><div class="pn"></div>
         <div class="screen">
-          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Floor 2 — Offices <span style="font-size:8px;opacity:.5">(s)</span></div><div class="tb-sub">Main Building · 10:00–12:00</div></div></div>
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Floor 2 — Offices <span style="font-size:8px;opacity:.5">(s)</span></div><div class="tb-sub">Building A · 10:00–12:00</div></div></div>
           <div style="background:var(--B);padding:7px 11px">
             <div style="font-size:8.5px;color:rgba(255,255,255,.75);margin-bottom:5px">3 of 7 steps <span style="color:rgba(255,255,255,.3);font-size:7px">(s)</span></div>
             <div class="pt"><div class="pf" style="width:43%"></div></div>
           </div>
           <div class="sb">
-            <!-- done items -->
             <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0">✓</div><div style="font-size:8.5px;color:var(--T3);text-decoration:line-through">Sweep all floor areas <span class="s">s</span></div></div>
             <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0">✓</div><div style="font-size:8.5px;color:var(--T3);text-decoration:line-through">Mop with disinfectant <span class="s">s</span></div></div>
             <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0">✓</div><div style="font-size:8.5px;color:var(--T3);text-decoration:line-through">Clean door handles <span class="s">s</span></div></div>
-            <!-- pending -->
             <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;border:1.5px solid var(--T3);flex-shrink:0"></div><div style="font-size:8.5px;color:var(--T1)">Clean window sills <span class="s">s</span></div></div>
             <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;border:1.5px solid var(--T3);flex-shrink:0"></div><div style="font-size:8.5px;color:var(--T1);flex:1">Empty waste bins <span class="s">s</span></div><span style="font-size:14px;color:var(--T3)">📷</span></div>
-            <!-- CANNOT CLEAN — issue logging -->
             <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:var(--ERL);border-bottom:1px solid #f5c0c0">
               <div style="width:17px;height:17px;border-radius:4px;border:1.5px solid var(--ER);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ER);font-weight:700">!</div>
               <div style="flex:1"><div style="font-size:8.5px;color:var(--ER);font-weight:700">Cannot Clean — Log Issue <span class="s">s</span></div><div style="font-size:7px;color:var(--ER)">Equipment malfunction</div></div>
@@ -1068,7 +1102,7 @@ body{
           <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Log Issue</div><div class="tb-sub">Cannot complete cleaning task</div></div></div>
           <div style="background:var(--ERL);padding:9px 11px;border-bottom:1px solid #f5c0c0;display:flex;align-items:center;gap:8px">
             <span style="font-size:18px">⚠️</span>
-            <div><div style="font-size:10px;font-weight:700;color:var(--ER)">Task Cannot Be Completed</div><div style="font-size:8px;color:var(--ER);opacity:.8">Stairwells · Main Building <span class="s">s</span></div></div>
+            <div><div style="font-size:10px;font-weight:700;color:var(--ER)">Task Cannot Be Completed</div><div style="font-size:8px;color:var(--ER);opacity:.8">Stairwells · Building A <span class="s">s</span></div></div>
           </div>
           <div class="sb">
             <div style="padding:7px 9px;border-bottom:1px solid var(--C)">
@@ -1110,7 +1144,7 @@ body{
 <!-- ══════════ FOOTER ══════════ -->
 <div class="pfoot">
   <div>
-    <div class="ft-brand">GJU<b>Clean</b></div>
+    <div class="ft-brand">SSD<b>Platform</b></div>
     <div class="ft-meta">Facility Cleaning Management System · German Jordanian University · 2025–2026</div>
     <div style="margin-top:8px;font-size:9.5px;color:rgba(255,255,255,.18)">All text marked <span style="background:var(--O);color:#fff;font-size:7px;padding:1px 5px;border-radius:3px;font-weight:700">sample</span> / <span style="background:var(--O);color:#fff;font-size:7px;padding:1px 4px;border-radius:3px;font-weight:700">s</span> is placeholder content for presentation purposes only</div>
   </div>

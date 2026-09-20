@@ -62,11 +62,38 @@
               <div class="pill" data-i18n="pill_2">Game Systems</div>
               <div class="pill" data-i18n="pill_3">Interactive Media</div>
             </div>
+
+            <div class="seeking-banner" data-i18n="seeking_banner"></div>
+            <div class="seeking-banner seeking-banner-alt" data-i18n="seeking_banner_2"></div>
           </div>
 
           <div>
             <img src="assets/hero.png" class="hero-img" id="heroImg" alt="Tala and Shams" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section featured" id="featured">
+      <div class="container featured-wrap">
+        <div class="featured-media" id="featuredMedia" role="button" tabindex="0" aria-label="Open Triverse showcase">
+          <img src="assets/triverse/game%20icon.jpeg" class="featured-poster" alt="Triverse" />
+          <div class="featured-play" aria-hidden="true">▶</div>
+        </div>
+
+        <div class="featured-info">
+          <div class="kicker" data-i18n="featured_kicker">Graduation Project</div>
+          <h2 class="big" id="featuredTitle">Triverse</h2>
+          <p class="muted" id="featuredDesc"></p>
+
+          <div class="chips" id="featuredTags"></div>
+          <div class="featured-badge" id="featuredBadge"></div>
+
+          <div class="hero-actions">
+            <button class="btn btn-shine" id="featuredCta" type="button" data-i18n="featured_cta">Explore Triverse</button>
+          </div>
+
+          <p class="pane-hint featured-hint" data-i18n="featured_hint"></p>
         </div>
       </div>
     </section>
@@ -78,6 +105,7 @@
           <h2 class="big" data-i18n="projects_h">A selection of creative & technical work across disciplines.</h2>
         </div>
 
+        <p class="filter-hint muted small" id="filterHint" data-i18n="filter_hint"></p>
         <div class="filter-row" id="projectFilters"></div>
         <div class="project-grid" id="projectGrid"></div>
       </div>
@@ -94,6 +122,7 @@
           <div class="card">
             <h3 data-i18n="edu_h">Education</h3>
             <p class="muted" data-i18n="edu_degree">Bachelor’s Degree in Game Design & Media Informatics</p>
+            <p class="muted small exchange-note" data-i18n="exchange_note"></p>
             <ul class="list" id="eduList"></ul>
           </div>
 
@@ -124,6 +153,13 @@
           <div class="card">
             <h3 data-i18n="prog_h">Programming & Development</h3>
             <div class="chips" id="progChips"></div>
+
+            <div class="portfolio-code-note">
+              <span class="portfolio-code-icon">&lt;/&gt;</span>
+              <span data-i18n="portfolio_code_note">
+                This portfolio website was designed and coded by me using HTML, CSS and JavaScript.
+              </span>
+            </div>
           </div>
 
           <div class="card">
@@ -143,11 +179,6 @@
         <div class="grid-2">
           <div class="card">
             <div class="timeline" id="expTimeline"></div>
-
-            <div class="spacer"></div>
-
-            <h3 data-i18n="certs_h">Certifications</h3>
-            <div class="cert-list" id="certsList"></div>
           </div>
 
           <div class="card">
@@ -226,10 +257,16 @@
         <h3 id="modalTitle">Project Title</h3>
         <p class="muted" id="modalDesc">Project description…</p>
 
+        <div class="project-note" id="modalNote" style="display:none"></div>
         <div class="chips" id="modalTags"></div>
+
+        <div class="project-case-study" id="modalCaseStudy" style="display:none"></div>
 
         <div class="modal-actions">
           <a class="btn" id="modalDemo" href="#" target="_blank" rel="noreferrer">Open Project</a>
+          <a class="btn btn-playable" id="modalPlayable" href="#" target="_blank" rel="noreferrer" style="display:none">
+            Open Game on itch.io ↗
+          </a>
         </div>
       </div>
     </div>
