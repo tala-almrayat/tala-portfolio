@@ -1187,8 +1187,42 @@ body{
 }
 
 @media(max-width:860px){
+  .topbar{
+    flex-wrap:wrap;
+    gap:8px 10px;
+  }
+
   .nav{
+    display:flex;
+    order:3;
+    flex:0 0 100%;
+    width:100%;
+    justify-content:space-between;
+    gap:4px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+
+  .nav::-webkit-scrollbar{
     display:none;
+  }
+
+  .nav-link{
+    flex:1 0 auto;
+    text-align:center;
+    padding:7px 6px;
+    font-size:11px;
+    white-space:nowrap;
+  }
+
+  .lang-btn{
+    width:92px;
+    height:36px;
+    flex:0 0 auto;
+  }
+
+  .page{
+    padding-top:132px;
   }
 
   .hero-grid{
