@@ -2324,59 +2324,63 @@ function renderTriverseMedia(
   `;
 
   const tabs =
-    media.querySelectorAll(
-      ".modal-tab"
-    );
+  media.querySelectorAll(
+    ".modal-tab"
+  );
 
-  const panes =
-    media.querySelectorAll(
-      ".triverse-pane"
-    );
+const panes =
+  media.querySelectorAll(
+    ".triverse-pane"
+  );
 
-  tabs.forEach((btn) => {
-    btn.addEventListener(
-      "click",
-      () => {
+tabs.forEach((btn) => {
+  btn.addEventListener(
+    "click",
+    () => {
 
-        tabs.forEach((b) => {
-          b.classList.remove(
-            "active"
-          );
+      media.querySelectorAll("video").forEach((video) => {
+        video.pause();
+      });
 
-          b.setAttribute(
-            "aria-selected",
-            "false"
-          );
-        });
-
-        panes.forEach((p) => {
-          p.classList.remove(
-            "active"
-          );
-        });
-
-        btn.classList.add(
+      tabs.forEach((b) => {
+        b.classList.remove(
           "active"
         );
 
-        btn.setAttribute(
+        b.setAttribute(
           "aria-selected",
-          "true"
+          "false"
+        );
+      });
+
+      panes.forEach((p) => {
+        p.classList.remove(
+          "active"
+        );
+      });
+
+      btn.classList.add(
+        "active"
+      );
+
+      btn.setAttribute(
+        "aria-selected",
+        "true"
+      );
+
+      const target =
+        media.querySelector(
+          `.triverse-pane-${btn.dataset.tab}`
         );
 
-        const target =
-          media.querySelector(
-            `.triverse-pane-${btn.dataset.tab}`
-          );
-
-        if (target) {
-          target.classList.add(
-            "active"
-          );
-        }
+      if (target) {
+        target.classList.add(
+          "active"
+        );
       }
-    );
-  });
+    }
+  );
+});
 
   /* ==========================
      GAMEPLAY CLIPS
