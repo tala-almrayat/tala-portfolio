@@ -9,10 +9,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+  <link rel="preload" as="image" href="assets/hero.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/triverse/game%20icon.jpeg" />
+  <link rel="preload" as="image" href="assets/cover/gju%20clean%20cover.png" />
+  <link rel="preload" as="image" href="assets/cover/kids%20game%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/obstacle%20game%20cover.png" />
+  <link rel="preload" as="image" href="assets/cover/Vr%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/storyboard%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/branding%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/maga%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/char%20design.jpg" />
+  <link rel="preload" as="image" href="assets/cover/logos%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/animation%20cover.jpg" />
+  <link rel="preload" as="image" href="assets/cover/3d%20cover.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="site-loader" id="siteLoader" aria-label="Loading portfolio" role="status">
+    <div class="site-loader-inner">
+      <div class="site-loader-mark">T</div>
+      <div class="site-loader-text">Loading portfolio…</div>
+    </div>
+  </div>
   <div class="bg" aria-hidden="true"></div>
   <div class="wipe" id="wipe" aria-hidden="true"></div>
 
@@ -68,7 +87,15 @@
           </div>
 
           <div>
-            <img src="assets/hero.png" class="hero-img" id="heroImg" alt="Tala and Shams" />
+            <img
+              src="assets/hero.png"
+              class="hero-img"
+              id="heroImg"
+              alt="Tala and Shams"
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+            />
           </div>
         </div>
       </div>
@@ -77,7 +104,7 @@
     <section class="section featured" id="featured">
       <div class="container featured-wrap">
         <div class="featured-media" id="featuredMedia" role="button" tabindex="0" aria-label="Open Triverse showcase">
-          <img src="assets/triverse/game%20icon.jpeg" class="featured-poster" alt="Triverse" />
+          <img src="assets/triverse/game%20icon.jpeg" class="featured-poster" alt="Triverse" loading="eager" fetchpriority="high" decoding="sync" />
           <div class="featured-play" aria-hidden="true">▶</div>
         </div>
 

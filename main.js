@@ -3412,6 +3412,72 @@ function initMouseFx() {
 }
 
 /* =====================================================
+   STABLE FIRST PAINT
+   Wait until every image currently used by the page has
+   finished loading/decoding, then reveal everything at once.
+===================================================== */
+
+function waitForImage(img) {
+  if (img.complete) {
+    if (typeof img.decode === "function" && img.naturalWidth > 0) {
+      return img.decode().catch(() => {});
+    }
+
+    return Promise.resolve();
+  }
+
+  return new Promise((resolve) => {
+    const done = () => {
+      img.removeEventListener("load", done);
+      img.removeEventListener("error", done);
+
+      if (typeof img.decode === "function" && img.naturalWidth > 0) {
+        img.decode().catch(() => {}).finally(resolve);
+      } else {
+        resolve();
+      }
+    };
+
+    img.addEventListener("load", done, { once: true });
+    img.addEventListener("error", done, { once: true });
+  });
+}
+
+async function revealSiteWhenReady() {
+  const loader = $("#siteLoader");
+
+  if (!loader) return;
+
+  const images = Array.from(document.images);
+
+  const imagePromise = Promise.all(
+    images.map((img) => waitForImage(img))
+  );
+
+  const fontPromise = document.fonts?.ready || Promise.resolve();
+
+  // Safety fallback: never trap the visitor on the loading screen.
+  const timeout = new Promise((resolve) => {
+    setTimeout(resolve, 12000);
+  });
+
+  await Promise.race([
+    Promise.all([imagePromise, fontPromise]),
+    timeout,
+  ]);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      loader.classList.add("is-ready");
+
+      setTimeout(() => {
+        loader.remove();
+      }, 220);
+    });
+  });
+}
+
+/* =====================================================
    INITIALIZATION
 ===================================================== */
 
@@ -3590,6 +3656,8 @@ function init() {
   renderProjectFilters();
 
   renderProjects();
+
+  revealSiteWhenReady();
 
   initMouseFx();
 }
