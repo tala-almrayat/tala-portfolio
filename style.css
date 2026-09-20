@@ -25,19 +25,31 @@ body{
   font-family:'Inter',sans-serif;
   color:var(--ink);
   overflow-x:hidden;
-  background:#f7f1f8;body{
-  font-family:'Inter',sans-serif;
-  color:var(--ink);
-  overflow-x:hidden;
-  background:#eee4f3 url("assets/bg.jpg") center/cover fixed no-repeat;
-}
+  background:#f7f1f8;
 }
 
 .bg{
   position:fixed;
   inset:0;
   z-index:-3;
-  background:url("assets/bg.jpg") center/cover no-repeat;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,255,255,.98) 0%,
+      rgba(255,255,255,.78) 28%,
+      transparent 52%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(238,224,255,.58) 0%,
+      transparent 43%
+    ),
+    radial-gradient(
+      circle at 72% 82%,
+      rgba(246,224,240,.42) 0%,
+      transparent 48%
+    ),
+    #f7f1f8;
 }
 
 .bg::after{
