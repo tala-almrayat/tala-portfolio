@@ -30,6 +30,7 @@ const i18n = {
   EN: {
     role: "Game & Interactive Media Designer",
 
+    nav_triverse: "Triverse",
     nav_projects: "Projects",
     nav_about: "About",
     nav_experience: "Experience",
@@ -41,7 +42,7 @@ const i18n = {
       "A Game & Interactive Media Designer who works across the full pipeline — game design, UI/UX, 3D and motion — to take an idea from concept to a playable, polished experience.",
 
     seeking_banner:
-      "🎯 Seeking a mandatory 6-month internship (Pflichtpraktikum) in Germany · German B1 · Available from March",
+      "🎯 Seeking a mandatory 6-month internship (Pflichtpraktikum) in Germany · Available from March 2027",
 
     seeking_banner_2:
       "📍 Currently on an exchange semester at Technische Hochschule Brandenburg (THB) · Based in Germany · Valid residence permit.",
@@ -159,6 +160,7 @@ const i18n = {
   DE: {
     role: "Game & Interactive Media Designerin",
 
+    nav_triverse: "Triverse",
     nav_projects: "Projekte",
     nav_about: "Über mich",
     nav_experience: "Erfahrung",
@@ -170,7 +172,7 @@ const i18n = {
       "Eine Game & Interactive Media Designerin, die über die gesamte Pipeline hinweg arbeitet — Game Design, UI/UX, 3D und Motion — um aus einer Idee eine spielbare, ausgereifte Erfahrung zu machen.",
 
     seeking_banner:
-      "🎯 Suche ein 6-monatiges Pflichtpraktikum in Deutschland · Deutsch B1 · Verfügbar ab März",
+      "🎯 Suche ein 6-monatiges Pflichtpraktikum in Deutschland · Verfügbar ab März 2027",
 
     seeking_banner_2:
       "📍 Derzeit im Austauschsemester an der Technischen Hochschule Brandenburg (THB) · In Deutschland wohnhaft · Gültiger Aufenthaltstitel.",
@@ -337,19 +339,20 @@ const languageItems = {
   EN: [
     "Arabic — Native",
     "English —  B2",
-    "German — B1",
+    "German — B1 · Currently improving through university coursework",
   ],
 
   DE: [
     "Arabisch — Muttersprache",
     "Englisch — B2",
-    "Deutsch — B1",
+    "Deutsch — B1 · Aktuell im universitären Deutschkurs",
   ],
 };
 
 const programming = [
   "C#",
   "Unity",
+  "Git / GitHub",
   "OOP",
   "C++",
   "C",
@@ -629,6 +632,10 @@ const featuredProject = {
     "Unity",
     "C#",
     "Blender",
+    "Git / GitHub",
+    "Game Design",
+    "Level Design",
+    "UI/UX",
   ],
 
   theme: "theme-triverse",
@@ -669,29 +676,29 @@ const featuredProject = {
 
 const triverseCaseStudy = {
   roleEN:
-    "Lead Game Designer & Technical Developer",
+    "Lead Game Designer & Technical Developer · 3-Person Team",
 
   roleDE:
-    "Lead Game Designerin & technische Entwicklerin",
+    "Lead Game Designerin & technische Entwicklerin · 3-köpfiges Team",
 
   tools:
-    "Unity (C#) · Blender · Figma · Photoshop",
+    "Unity (C#) · Visual Studio · Blender · Photoshop · Git/GitHub · GitHub Desktop",
 
   timelineEN: "2 months",
 
   timelineDE: "2 Monate",
 
   deliverablesEN:
-    "Playable prototype · System architecture · Level layouts · Design documentation",
+    "Level & map design · Gameplay coding · UI/UX · Visual effects · Sound integration · Playable prototype",
 
   deliverablesDE:
-    "Spielbarer Prototyp · Systemarchitektur · Level-Layouts · Design-Dokumentation",
+    "Level- & Map-Design · Gameplay-Programmierung · UI/UX · Visual Effects · Sound-Integration · Spielbarer Prototyp",
 
   overviewEN:
-    "Triverse is a 3D fantasy adventure built in Unity, centered on environmental pollution tracking, character switching and level exploration. The goal was a playable prototype where the systems, UI and level design work together as one clear feedback loop — not separate pieces stitched together.",
+    "Triverse is a 3D fantasy adventure created as a three-person graduation team project in Unity. My largest responsibility was designing and building the game maps and levels, while I also worked across the project on gameplay coding, game design, UI/UX, visual effects and sound integration. We used Git/GitHub collaboratively through GitHub Desktop with a Push/Pull workflow. The experience centers on environmental pollution tracking, character switching and level exploration.",
 
   overviewDE:
-    "Triverse ist ein 3D-Fantasy-Adventure, entwickelt in Unity, mit Fokus auf Umweltverschmutzungs-Tracking, Charakterwechsel und Level-Exploration. Ziel war ein spielbarer Prototyp, bei dem Systeme, UI und Level-Design als ein klarer Feedback-Loop zusammenspielen — nicht als lose aneinandergereihte Teile.",
+    "Triverse ist ein 3D-Fantasy-Adventure, das als Abschlussprojekt in einem dreiköpfigen Team mit Unity entwickelt wurde. Mein größter Verantwortungsbereich war das Design und der Aufbau der Maps und Levels; zusätzlich arbeitete ich projektübergreifend an Gameplay-Programmierung, Game Design, UI/UX, Visual Effects und Sound-Integration. Für die Zusammenarbeit nutzten wir Git/GitHub über GitHub Desktop mit einem Push/Pull-Workflow. Im Mittelpunkt stehen Umweltverschmutzungs-Tracking, Charakterwechsel und Level-Exploration.",
 
   sections: [
     {
@@ -725,6 +732,23 @@ const triverseCaseStudy = {
       bodyDE: [
         "Charakterwechsel-System in C#, mit modularem State-Pattern, sodass Bewegung, Fähigkeiten und Animations-Trigger jedes Charakters isoliert und leicht erweiterbar bleiben.",
         "Echtzeit-Verschmutzungs-Tracking pro Zone: Abgeschlossene Ziele lösen sichtbare Material- und Lichtveränderungen aus, sodass Fortschritt spürbar ist statt nur angezeigt.",
+      ],
+    },
+
+    {
+      titleEN: "Collaboration & Version Control",
+      titleDE: "Zusammenarbeit & Versionskontrolle",
+
+      icon: "🔄",
+
+      bodyEN: [
+        "Worked collaboratively in a three-person team using Git/GitHub for version control.",
+        "Used GitHub Desktop for the team’s Push/Pull workflow to synchronize project changes.",
+      ],
+
+      bodyDE: [
+        "Zusammenarbeit in einem dreiköpfigen Team mit Git/GitHub zur Versionskontrolle.",
+        "GitHub Desktop für den Push/Pull-Workflow des Teams genutzt, um Projektänderungen zu synchronisieren.",
       ],
     },
 
@@ -807,10 +831,10 @@ const projects = [
     "GJU Clean — Facility-Cleaning-Plattform",
 
   descEN:
-    "A facility-cleaning application developed as a team project, combining responsive interface design with an Android application built in Kotlin and XML using Android Studio.",
+    "A facility-cleaning application developed by a six-person team that I led, combining responsive interface design with an Android application built in Kotlin and XML using Android Studio.",
 
   descDE:
-    "Eine Facility-Cleaning-Anwendung, die als Teamprojekt entwickelt wurde und responsives Interface Design mit einer Android-App verbindet, die mit Kotlin und XML in Android Studio umgesetzt wurde.",
+    "Eine Facility-Cleaning-Anwendung, die von einem sechsköpfigen Team unter meiner Leitung entwickelt wurde und responsives Interface Design mit einer Android-App verbindet, die mit Kotlin und XML in Android Studio umgesetzt wurde.",
 
   tags: [
     "Kotlin",
@@ -874,17 +898,17 @@ const projects = [
   type: "html",
 
   noteEN:
-    "Team project — I worked on the interface design and implementation, including HTML/CSS interface screens and the final Android application developed with Kotlin and XML in Android Studio.",
+    "Six-person team project — I served as the team leader and contributed to the interface design and implementation, including HTML/CSS interface screens and the final Android application developed with Kotlin and XML in Android Studio.",
 
   noteDE:
-    "Teamprojekt — Ich arbeitete am Interface Design und an der Umsetzung, einschließlich HTML/CSS-Interface-Screens sowie der finalen Android-App mit Kotlin und XML in Android Studio.",
+    "Teamprojekt mit sechs Personen — Ich leitete das Team und arbeitete am Interface Design und an der Umsetzung mit, einschließlich HTML/CSS-Interface-Screens sowie der finalen Android-App mit Kotlin und XML in Android Studio.",
 
   caseStudy: {
     roleEN:
-      "Interface Designer & Android Developer",
+      "Team Lead · Interface Designer & Android Developer",
 
     roleDE:
-      "Interface Designerin & Android-Entwicklerin",
+      "Teamleitung · Interface Designerin & Android-Entwicklerin",
 
     challengeEN:
       "Turn a facility-cleaning workflow into a clear mobile application for employees and supervisors with different tasks and responsibilities.",
@@ -911,7 +935,6 @@ const projects = [
       "Eine funktionierende Facility-Cleaning-Anwendung mit eigenen Oberflächen für Mitarbeitende und Supervisoren, die gemeinsam im Team fertiggestellt wurde."
   }
 },
-  
 
   {
     id: "wg2",
@@ -986,6 +1009,69 @@ const projects = [
   },
 
   {
+    id: "wg4",
+    group: "WebGames",
+
+    titleEN: "AR Experience",
+    titleDE: "AR Experience",
+
+    descEN:
+      "An augmented reality prototype developed in Unity with Vuforia, focused on combining digital content with the real-world environment through AR interaction.",
+
+    descDE:
+      "Ein Augmented-Reality-Prototyp, entwickelt mit Unity und Vuforia, mit Fokus auf die Verbindung digitaler Inhalte mit der realen Umgebung durch AR-Interaktion.",
+
+    tags: [
+      "AR",
+      "Unity",
+      "Vuforia",
+      "Interaction Design",
+    ],
+
+    cover:
+      "./assets/cover/Vr%20cover.jpg",
+
+    theme: "theme-vr",
+
+    demo:
+      "./assets/projects/VR.mp4",
+
+    type: "video",
+
+    caseStudy: {
+      roleEN:
+        "AR Interaction + Experience Design",
+
+      roleDE:
+        "AR-Interaktion + Experience Design",
+
+      challengeEN:
+        "Create a clear AR experience that connects digital content with the real-world environment through Unity and Vuforia.",
+
+      challengeDE:
+        "Eine klare AR-Experience schaffen, die digitale Inhalte mithilfe von Unity und Vuforia mit der realen Umgebung verbindet.",
+
+      processEN:
+        "Focused the prototype on AR interaction, clear placement of digital content and the relationship between virtual elements and the real-world view.",
+
+      processDE:
+        "Den Prototyp auf AR-Interaktion, die klare Platzierung digitaler Inhalte und die Verbindung virtueller Elemente mit der realen Ansicht fokussiert.",
+
+      implementationEN:
+        "Built and tested the AR prototype in Unity using Vuforia and documented the experience through the project video.",
+
+      implementationDE:
+        "Den AR-Prototyp mit Unity und Vuforia umgesetzt und getestet und die Experience im Projektvideo dokumentiert.",
+
+      resultEN:
+        "A functional AR prototype demonstrating augmented-reality interaction using Unity and Vuforia.",
+
+      resultDE:
+        "Ein funktionaler AR-Prototyp, der Augmented-Reality-Interaktion mit Unity und Vuforia demonstriert.",
+    },
+  },
+
+  {
     id: "wg3",
     group: "WebGames",
 
@@ -1054,67 +1140,69 @@ const projects = [
   },
 
   {
-    id: "wg4",
+    id: "wg5",
     group: "WebGames",
-
-    titleEN: "VR Experience",
-    titleDE: "VR Erfahrung",
-
-    descEN:
-      "An immersive VR interaction prototype focused on spatial navigation, environment interaction and player experience inside a real-time 3D scene.",
-
-    descDE:
-      "Ein immersiver VR-Interaktionsprototyp mit Fokus auf räumliche Navigation, Umgebungsinteraktion und Player Experience in einer Echtzeit-3D-Szene.",
-
-    tags: [
-      "VR",
-      "Interaction Design",
-      "3D Environment",
-      "Prototyping",
-    ],
-
-    cover:
-      "./assets/cover/Vr%20cover.jpg",
-
-    theme: "theme-vr",
-
-    demo:
-      "./assets/projects/VR.mp4",
-
+    titleEN: "Terrain Exploration",
+    titleDE: "Terrain Exploration",
+    descEN: "A short Unity gameplay prototype exploring terrain creation, environmental composition, player movement and mission-based interaction in a natural 3D space.",
+    descDE: "Ein kurzer Unity-Gameplay-Prototyp mit Fokus auf Terrain-Erstellung, Environment Composition, Spielerbewegung und missionsbasierte Interaktion in einer natürlichen 3D-Umgebung.",
+    tags: ["Unity", "Terrain Design", "Environment"],
+    cover: "./assets/cover/terrain%20cover.png",
+    theme: "theme-terrain",
+    demo: "./assets/projects/terrain%20new.mp4",
     type: "video",
-
     caseStudy: {
-      roleEN:
-        "VR Interaction + Experience Design",
-
-      roleDE:
-        "VR Interaction + Experience Design",
-
-      challengeEN:
-        "Create an immersive experience where navigation and interaction remain understandable inside a 3D environment.",
-
-      challengeDE:
-        "Eine immersive Erfahrung gestalten, in der Navigation und Interaktion innerhalb einer 3D-Umgebung verständlich bleiben.",
-
-      processEN:
-        "Focused the prototype on spatial navigation, interaction clarity and the relationship between the player and the environment.",
-
-      processDE:
-        "Den Prototyp auf räumliche Navigation, klare Interaktionen und die Beziehung zwischen Player und Umgebung fokussiert.",
-
-      implementationEN:
-        "Built and tested the VR interaction flow as a real-time prototype and documented the experience through the project video.",
-
-      implementationDE:
-        "Den VR-Interaktionsfluss als Echtzeit-Prototyp aufgebaut und getestet und die Experience im Projektvideo dokumentiert.",
-
-      resultEN:
-        "An immersive VR prototype demonstrating environment navigation and interaction design.",
-
-      resultDE:
-        "Ein immersiver VR-Prototyp, der Umgebungsnavigation und Interaction Design demonstriert.",
-    },
+      roleEN: "Environment & Gameplay Prototype",
+      roleDE: "Environment- & Gameplay-Prototyp",
+      challengeEN: "Build a natural 3D terrain that supports clear player movement and a simple mission loop.",
+      challengeDE: "Ein natürliches 3D-Terrain entwickeln, das klare Spielerbewegung und einen einfachen Mission-Loop unterstützt.",
+      processEN: "Shaped the terrain and environment, placed vegetation and scene elements, and tested how the player reads and moves through the space.",
+      processDE: "Terrain und Umgebung gestaltet, Vegetation und Szenenelemente platziert und getestet, wie sich der Spieler im Raum orientiert und bewegt.",
+      implementationEN: "Built the prototype in Unity and connected the environment with player controls, energy collection and mission feedback.",
+      implementationDE: "Den Prototyp in Unity umgesetzt und die Umgebung mit Spielersteuerung, Energy Collection und Mission Feedback verbunden.",
+      resultEN: "A compact playable terrain prototype demonstrating environment building and a complete mission interaction loop.",
+      resultDE: "Ein kompakter spielbarer Terrain-Prototyp, der Environment Building und einen vollständigen Mission-Interaction-Loop zeigt."
+    }
   },
+
+  {
+    id: "wg6",
+    group: "WebGames",
+    titleEN: "Dungeon Obstacle Game",
+    titleDE: "Dungeon Obstacle Game",
+    descEN: "A Unity dungeon gameplay project combining level building, obstacles, exploration and environmental progression inside a 3D dungeon.",
+    descDE: "Ein Unity-Dungeon-Projekt, das Level Building, Hindernisse, Exploration und Environment Progression in einer 3D-Dungeon-Umgebung verbindet.",
+    tags: ["Unity", "Level Design", "Gameplay"],
+    cover: "./assets/cover/dun%20man%20cover.png",
+    theme: "theme-dungeon",
+    panes: [
+      { labelEN: "Gameplay Video", labelDE: "Gameplay-Video", type: "video", src: "./assets/dunManGame/dun.man-final%20(2).mp4", hintEN: "Gameplay walkthrough of the dungeon project.", hintDE: "Gameplay-Walkthrough des Dungeon-Projekts." },
+      { labelEN: "Development 01", labelDE: "Entwicklung 01", type: "image", src: "./assets/dunManGame/WhatsApp%20Image%202026-05-24%20at%207.08.21%20AM.jpeg" },
+      { labelEN: "Development 02", labelDE: "Entwicklung 02", type: "image", src: "./assets/dunManGame/WhatsApp%20Image%202026-05-24%20at%207.08.35%20AM.jpeg" },
+      { labelEN: "Development 03", labelDE: "Entwicklung 03", type: "image", src: "./assets/dunManGame/WhatsApp%20Image%202026-05-24%20at%207.09.17%20AM.jpeg" },
+      { labelEN: "Development 04", labelDE: "Entwicklung 04", type: "image", src: "./assets/dunManGame/WhatsApp%20Image%202026-05-24%20at%207.10.12%20AM.jpeg" },
+      { labelEN: "Development 05", labelDE: "Entwicklung 05", type: "image", src: "./assets/dunManGame/WhatsApp%20Image%202026-05-24%20at%207.10.39%20AM.jpeg" },
+      { labelEN: "Development 06", labelDE: "Entwicklung 06", type: "image", src: "./assets/dunManGame/WhatsApp%20Image%202026-05-24%20at%207.10.57%20AM.jpeg" }
+    ],
+    demo: "./assets/dunManGame/dun.man-final%20(2).mp4",
+    type: "video",
+    noteEN: "The development gallery documents the project during construction, alongside the final gameplay video.",
+    noteDE: "Die Development Gallery dokumentiert das Projekt während der Entwicklung, zusammen mit dem finalen Gameplay-Video.",
+    caseStudy: {
+      roleEN: "Level Design & Unity Gameplay Development",
+      roleDE: "Level Design & Unity Gameplay Development",
+      challengeEN: "Create a dungeon level where obstacles, exploration and environmental progression guide the player through the space.",
+      challengeDE: "Ein Dungeon-Level entwickeln, in dem Hindernisse, Exploration und Environment Progression den Spieler durch den Raum führen.",
+      processEN: "Built and iterated on the dungeon layout, testing paths, obstacles, lighting and progression while documenting the work through development screenshots.",
+      processDE: "Das Dungeon-Layout aufgebaut und iteriert sowie Wege, Hindernisse, Beleuchtung und Progression getestet und den Entwicklungsprozess mit Screenshots dokumentiert.",
+      implementationEN: "Developed the project in Unity, combining the 3D dungeon environment with player movement, obstacles and gameplay progression.",
+      implementationDE: "Das Projekt in Unity umgesetzt und die 3D-Dungeon-Umgebung mit Spielerbewegung, Hindernissen und Gameplay Progression verbunden.",
+      resultEN: "A playable dungeon prototype with a documented development process, final gameplay video and clear level-design progression.",
+      resultDE: "Ein spielbarer Dungeon-Prototyp mit dokumentiertem Entwicklungsprozess, finalem Gameplay-Video und klarer Level-Design-Progression."
+    }
+  },,
+
+
     {
     id: "g5",
     group: "Graphic",
@@ -1126,8 +1214,8 @@ const projects = [
       "Visuelles Storytelling und Szenenkomposition.",
     tags: ["Storyboard"],
     cover: "./assets/cover/storyboard%20cover.jpg",
-    demo: "./assets/projects/storyBoard.png",
-    type: "image",
+    demo: "./assets/projects/storyboard.mp4",
+    type: "video",
   },
 
   {
@@ -3060,6 +3148,14 @@ function openProjectModal(
   modalCard.className =
     "modal-card";
 
+  if (project.panes && project.panes.length) {
+    modalCard.classList.add("has-tabs");
+  }
+
+  if (project.id === "wg6") {
+    modalCard.classList.add("dungeon-modal");
+  }
+
   if (project.theme) {
     modalCard.classList.add(
       project.theme
@@ -3376,42 +3472,6 @@ function setLang(nextLang) {
 }
 
 /* =====================================================
-   MOUSE BACKGROUND EFFECT
-===================================================== */
-
-function initMouseFx() {
-  window.addEventListener(
-    "mousemove",
-    (e) => {
-
-      document.documentElement
-        .style
-        .setProperty(
-          "--mouse-x",
-          (
-            e.clientX /
-            window.innerWidth
-          ) *
-            100 +
-            "%"
-        );
-
-      document.documentElement
-        .style
-        .setProperty(
-          "--mouse-y",
-          (
-            e.clientY /
-            window.innerHeight
-          ) *
-            100 +
-            "%"
-        );
-    }
-  );
-}
-
-/* =====================================================
    STABLE FIRST PAINT
    Wait until every image currently used by the page has
    finished loading/decoding, then reveal everything at once.
@@ -3658,8 +3718,6 @@ function init() {
   renderProjects();
 
   revealSiteWhenReady();
-
-  initMouseFx();
 }
 
 /* =====================================================
