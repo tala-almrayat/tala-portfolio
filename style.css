@@ -3861,3 +3861,45 @@ body{
   }
 
 }
+/* FINAL FIX — Partner flip card faces */
+.flip {
+  position: relative;
+  perspective: 1200px;
+}
+
+.flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.flip-face {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.flip-front {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.flip:hover .flip-front,
+.flip:focus-visible .flip-front,
+.flip.is-flipped .flip-front {
+  visibility: hidden;
+}
+
+.flip:hover .flip-back,
+.flip:focus-visible .flip-back,
+.flip.is-flipped .flip-back {
+  visibility: visible;
+}
