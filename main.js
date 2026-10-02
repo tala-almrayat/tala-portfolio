@@ -468,26 +468,26 @@ const experience = [
   },
 
   {
-    roleEN: "UI/UX & Digital Media Intern",
+    roleEN: "Freelance Graphic & UI/UX Designer",
 
     roleDE:
-      "Praktikum im Bereich UI/UX & Digital Media",
+      "Freelance Graphic & UI/UX Designerin",
 
     org: "Tomandora",
 
-    periodEN: "August 2022 – 2023",
-    periodDE: "August 2022 – 2023",
+    periodEN: "2023 – 2024",
+    periodDE: "2023 – 2024",
 
     bulletsEN: [
-      "Developed digital brand identities",
-      "Created high-fidelity designs for different platforms",
-      "Supported design work with AI tools for ideation, visual refinement, and workflow efficiency",
+      "Designed graphic, UI/UX, and branding materials for different client projects",
+      "Developed visual concepts for digital platforms, presentations, and brand communication",
+      "Used AI tools to support ideation and visual development",
     ],
 
     bulletsDE: [
-      "Entwicklung digitaler Markenidentitäten",
-      "Erstellung von High-Fidelity-Designs für verschiedene Plattformen",
-      "Unterstützung von Designprozessen mit KI-Tools für Ideenfindung, visuelle Optimierung und effizientere Workflows",
+      "Gestaltung von Grafik-, UI/UX- und Branding-Materialien für verschiedene Kundenprojekte",
+      "Entwicklung visueller Konzepte für digitale Plattformen, Präsentationen und Markenkommunikation",
+      "Einsatz von KI-Tools zur Unterstützung von Ideenfindung und visueller Entwicklung",
     ],
   },
 
@@ -496,19 +496,17 @@ const experience = [
 
     roleDE: "Praktikum im Bereich Grafikdesign",
 
-    org: "Dar Al-Funoun",
+    org: "Dar Al-Fan",
 
-    periodEN: "2021",
-    periodDE: "2021",
+    periodEN: "2022",
+    periodDE: "2022",
 
     bulletsEN: [
-      "Designed logo concepts and visual identity elements",
-      "Worked on magazine layouts, print visuals, and presentation materials",
+      "Designed logo concepts, visual identities, magazine layouts and presentation materials",
     ],
 
     bulletsDE: [
-      "Gestaltung von Logo-Konzepten und visuellen Identitätselementen",
-      "Arbeit an Magazinlayouts, Print-Visuals und Präsentationsmaterialien",
+      "Gestaltung von Logo-Konzepten, visuellen Identitäten, Magazinlayouts und Präsentationsmaterialien",
     ],
   },
 ];
@@ -831,10 +829,10 @@ const projects = [
     "GJU Clean — Facility-Cleaning-Plattform",
 
   descEN:
-    "A facility-cleaning application developed by a six-person team that I led, combining responsive interface design with an Android application built in Kotlin and XML using Android Studio.",
+    "A facility-cleaning application developed collaboratively by a six-person team, combining responsive interface design with an Android application built in Kotlin and XML using Android Studio.",
 
   descDE:
-    "Eine Facility-Cleaning-Anwendung, die von einem sechsköpfigen Team unter meiner Leitung entwickelt wurde und responsives Interface Design mit einer Android-App verbindet, die mit Kotlin und XML in Android Studio umgesetzt wurde.",
+    "Eine Facility-Cleaning-Anwendung, die gemeinsam von einem sechsköpfigen Team entwickelt wurde und responsives Interface Design mit einer Android-App verbindet, die mit Kotlin und XML in Android Studio umgesetzt wurde.",
 
   tags: [
     "Kotlin",
@@ -898,17 +896,17 @@ const projects = [
   type: "html",
 
   noteEN:
-    "Six-person team project — I served as the team leader and contributed to the interface design and implementation, including HTML/CSS interface screens and the final Android application developed with Kotlin and XML in Android Studio.",
+    "Six-person team project — I contributed to the interface design and implementation, including HTML/CSS interface screens and the final Android application developed with Kotlin and XML in Android Studio.",
 
   noteDE:
-    "Teamprojekt mit sechs Personen — Ich leitete das Team und arbeitete am Interface Design und an der Umsetzung mit, einschließlich HTML/CSS-Interface-Screens sowie der finalen Android-App mit Kotlin und XML in Android Studio.",
+    "Teamprojekt mit sechs Personen — Ich arbeitete am Interface Design und an der Umsetzung mit, einschließlich HTML/CSS-Interface-Screens sowie der finalen Android-App mit Kotlin und XML in Android Studio.",
 
   caseStudy: {
     roleEN:
-      "Team Lead · Interface Designer & Android Developer",
+      "Interface Designer & Android Developer",
 
     roleDE:
-      "Teamleitung · Interface Designerin & Android-Entwicklerin",
+      "Interface Designerin & Android-Entwicklerin",
 
     challengeEN:
       "Turn a facility-cleaning workflow into a clear mobile application for employees and supervisors with different tasks and responsibilities.",
@@ -2500,6 +2498,10 @@ function renderTriverseMedia(
       "click",
       () => {
 
+        media.querySelectorAll("video").forEach((video) => {
+          video.pause();
+        });
+
         tabs.forEach((b) => {
           b.classList.remove(
             "active"
@@ -2599,6 +2601,13 @@ function renderTriverseMedia(
 
           if (!vid) return;
 
+          media.querySelectorAll("video").forEach((video) => {
+            if (video !== vid) {
+              video.pause();
+            }
+          });
+
+          vid.pause();
           vid.src = src;
 
           vid
@@ -3068,6 +3077,10 @@ function renderTabbedMedia(
             btn.dataset.i
           );
 
+        media.querySelectorAll("video").forEach((video) => {
+          video.pause();
+        });
+
         tabs.forEach((b) => {
           b.classList.remove(
             "active"
@@ -3326,6 +3339,10 @@ function closeModal() {
     $("#modalMedia");
 
   if (media) {
+    media.querySelectorAll("video").forEach((video) => {
+      video.pause();
+    });
+
     media.innerHTML = "";
   }
 
@@ -3392,9 +3409,7 @@ function setLang(nextLang) {
 
       if (cvBtn) {
         cvBtn.href =
-          state.lang === "DE"
-            ? "assets/Bewerbungsunterlagen-Tala Almrayat.pdf"
-            : "assets/Merged-Tala Almrayat.pdf";
+          "assets/Tala_Almrayat_CV.pdf";
       }
 
       /* ======================
